@@ -2,8 +2,8 @@
 
 ### What is the Pi Finder for?
 Often you plug in your Raspberry Pi in a network where you get a random IP
-from the DHCP server. In the best situation you had access to the DHCP server
-to get the IP address.
+from the DHCP server. In the best situation you have access to the DHCP server / router
+and find the IP address.
 
 But what if you ...
 * ... don't have access to the DHCP server / router?
@@ -12,8 +12,8 @@ But what if you ...
 * ... don't want to do that work **every time**?
 
 The Pi Finder is here to **solve** all of these problems if you...
-* ... get a IP address
-* ... have internet connection
+* ... dynamically get an IP address in this network (DHCP).
+* ... have a internet connection.
 
 ### How does it work?
 After the initial installation your Pi will notify this site
