@@ -1,6 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Device;
+use App\Services\MarkdownParser;
+use Illuminate\Contracts\Cache\Repository as Cache;
+use Illuminate\Filesystem\Filesystem;
 
 class WelcomeController extends Controller {
 
@@ -32,9 +35,30 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        $devices = Device::all();
+		$devices = Device::all();
 
 		return view('overview')->with(compact('devices'));
+	}
+
+	/**
+	 * Show the getting started screen to the user.
+	 *
+	 * @param MarkdownParser $markdown
+	 * @param Cache $cache
+	 * @param Filesystem $file
+	 *
+	 * @return Response
+	 */
+	public function gettingStarted(MarkdownParser $markdown, Cache $cache, Filesystem $file)
+	{
+		$gettingStarted = $cache->remember('getting-started', 5, function() use ($markdown, $file) {
+
+			$gettingStarted = $file->get( base_path('resources/getting-started/readme.md') );
+
+			return $markdown->parse($gettingStarted);
+		});
+
+		return view('getting-started')->with(compact('gettingStarted'));
 	}
 
 }

@@ -30,7 +30,10 @@ body {
   font-size: 160px;
   line-height: 1;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  margin-top: 30px; }
+  .page-icon a, .page-icon a:hover {
+    color: white; }
 
 .page-title {
   font-weight: 300;
@@ -38,6 +41,18 @@ body {
   margin: 0;
   position: relative;
   z-index: 1; }
+  .page-title a, .page-title a:hover {
+    color: white; }
+
+.page-title__sub {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 30px auto;
+  position: relative;
+  z-index: 1; }
+  .page-title__sub a {
+    color: white;
+    border-bottom: solid 1px white; }
 
 .table-container {
   box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.25);
@@ -69,6 +84,27 @@ body {
 .tile--shadow {
   box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.05);
   border-radius: 0; }
+
+.home-nav, .home-nav--right {
+  -moz-tab-size: 18px;
+    -o-tab-size: 18px;
+       tab-size: 18px;
+  z-index: 2;
+  position: relative;
+  float: left;
+  margin-left: 25px;
+  color: white;
+  font-weight: 300; }
+  .home-nav:hover, .home-nav--right:hover {
+    color: #ededed; }
+
+.home-nav--right {
+  float: right;
+  right: 25px;
+  margin-left: 0px; }
+
+.getting-started, .getting-started p {
+  font-size: 16px; }
 
 
 /*# sourceMappingURL=app.css.map */

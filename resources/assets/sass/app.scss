@@ -35,6 +35,12 @@ body {
   line-height: 1;
   position: relative;
   z-index: 1;
+  margin-top: 30px;
+
+  a,
+  a:hover {
+    color: white;
+  }
 }
 
 .page-title {
@@ -43,6 +49,23 @@ body {
   margin: 0;
   position: relative;
   z-index: 1;
+
+  a,
+  a:hover {
+    color: white;
+  }
+}
+.page-title__sub {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 30px auto;
+  position: relative;
+  z-index: 1;
+
+  a {
+    color: white;
+    border-bottom: solid 1px white;
+  }
 }
 
 .table-container {
@@ -85,4 +108,31 @@ body {
 .tile--shadow {
   box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.05);
   border-radius: 0;
+}
+
+.home-nav {
+  tab-size: 18px;
+  z-index: 2;
+  position: relative;
+  float: left;
+  margin-left: 25px;
+  color: white;
+  font-weight: 300;
+
+  &:hover {
+    color: #ededed;
+  }
+}
+
+.home-nav--right {
+  @extend .home-nav;
+  float: right;
+  right: 25px;
+  margin-left: 0px;
+}
+
+.getting-started,
+.getting-started p,
+{
+  font-size: 16px;
 }

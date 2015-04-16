@@ -1,16 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <div class="container__header">
-        <div class="container">
-            <div class="page-icon">
-                <span class="icon-raspberrypi"></span>
-            </div>
-            <h1 class="page-title">Pi Finder</h1>
-        </div> <!-- container -->
-    </div> <!-- container__header -->
-
     <div class="container">
         @if($devices->count())
 

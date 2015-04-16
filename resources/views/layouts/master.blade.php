@@ -20,8 +20,11 @@
     <!-- Loading Sweet Alert -->
     <link rel="stylesheet" type="text/css" href="/css/sweet-alert.css">
 
-    <!-- Loading Sweet Alert -->
+    <!-- Loading mfizz Font -->
     <link rel="stylesheet" type="text/css" href="/css/font-mfizz.css">
+
+    <!-- Loading Prism -->
+    <link rel="stylesheet" type="text/css" href="/css/prism.css">
 
     <!--<link rel="shortcut icon" href="/img/favicon/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png" />
@@ -56,6 +59,21 @@
 <body>
 {{-- @include('layouts.partials.navbar') --}}
 
+<div class="container__header">
+    <a href="/getting-started" class="home-nav">Getting Started</a>
+    <!-- <a href="/getting-started" class="home-nav--right">Introduction</a> -->
+    <div class="container">
+        <div class="page-icon">
+            <a href="/"><span class="icon-raspberrypi"></span></a>
+        </div>
+        <h1 class="page-title"><a href="/">Pi Finder</a></h1>
+        <h2 class="page-title__sub">
+            Find your Raspberry Pi or any other unix based device in your network.
+            <a href="/getting-started">Easy.</a>
+        </h2>
+    </div> <!-- container -->
+</div> <!-- container__header -->
+
 @yield('content')
 
 <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
@@ -63,6 +81,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/flat-ui-pro.min.js"></script>
 <script src="/js/sweet-alert.min.js"></script>
+<script src="/js/prism.js"></script>
 @yield('javascript')
 
 </body>

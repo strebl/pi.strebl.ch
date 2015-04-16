@@ -2,6 +2,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('/getting-started', 'WelcomeController@gettingStarted');
+
 Route::group(['prefix' => 'api/v1', 'namespace' => 'Api'], function()
 {
     Route::resource('devices', 'DeviceController', ['except' => ['create', 'edit']]);
