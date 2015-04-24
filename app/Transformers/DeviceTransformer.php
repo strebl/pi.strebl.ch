@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Transformers;
+namespace App\Transformers;
 
 class DeviceTransformer extends Transformer
 {
