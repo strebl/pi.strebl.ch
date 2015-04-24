@@ -6,6 +6,11 @@ php:
   - 5.6
   - hhvm
 
+env:
+  - APP_ENV=testing
+  - APP_DEBUG=true
+  - SQLITE_DATABASE=:memory:
+
 sudo: false
 
 install:
