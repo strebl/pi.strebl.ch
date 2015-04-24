@@ -7,9 +7,7 @@ php:
   - hhvm
 
 env:
-  - APP_ENV=testing
-  - APP_DEBUG=true
-  - SQLITE_DATABASE=:memory:
+  - APP_ENV=testing APP_DEBUG=true SQLITE_DATABASE=:memory:
 
 sudo: false
 
