@@ -3036,11 +3036,11 @@ class ApiTester extends \Codeception\Actor
      *
      * @param $jsonPath
      *
+     * @throws \Exception
+     *
      * @return array
      *
      * @version 2.0.9
-     *
-     * @throws \Exception
      *
      * @see \Codeception\Module\REST::grabDataFromResponseByJsonPath()
      */

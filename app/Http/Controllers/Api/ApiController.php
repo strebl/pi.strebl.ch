@@ -2,8 +2,8 @@
 
 namespace PiFinder\Http\Controllers\Api;
 
-use PiFinder\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
+use PiFinder\Http\Controllers\Controller;
 
 class ApiController extends Controller
 {
@@ -100,7 +100,7 @@ class ApiController extends Controller
     {
         return $this->respond([
             'errors' => [
-                'title' => $message,
+                'title'  => $message,
                 'status' => $this->getStatusCode(),
             ],
         ]);

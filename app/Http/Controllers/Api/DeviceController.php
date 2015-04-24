@@ -116,9 +116,9 @@ class DeviceController extends ApiController
      *
      * @param StoreComputerRequest $request
      *
-     * @return Response
-     *
      * @throws \Exception
+     *
+     * @return Response
      */
     public function poke(StoreComputerRequest $request)
     {

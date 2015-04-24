@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => 'PiFinder\Http\Middleware\Authenticate',
+        'auth'       => 'PiFinder\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest' => 'PiFinder\Http\Middleware\RedirectIfAuthenticated',
+        'guest'      => 'PiFinder\Http\Middleware\RedirectIfAuthenticated',
     ];
 }

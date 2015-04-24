@@ -24,8 +24,8 @@ class StoreComputerRequest extends Request
     public function rules()
     {
         return [
-            'ip' => 'required|ip',
-            'mac' => 'required|mac',
+            'ip'   => 'required|ip',
+            'mac'  => 'required|mac',
             'name' => 'required',
         ];
     }
