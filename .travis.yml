@@ -33,3 +33,10 @@ after_script:
 
 after_failure:
  - cat storage/logs/*.log
+
+notifications:
+  webhooks:
+    urls:
+      secure: ExavtP5SCg08UQGPbmErLApMnzgn2ZEkI87/OoFIdSBYTOiz0VJjJ85h8Im0EOC3+8RlbLSnjCzTeZbaeN/Atxl94ZmIpA/X5FF4hNGMXsi0Ynt4wYfyCK+IHT5iWzS+H3WWDQcUMogRYMUYa02BX688VtzQ4eRKETTO+SzV+yo=
+    on_success: always
+    on_failure: never
