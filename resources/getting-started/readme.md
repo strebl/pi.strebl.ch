@@ -58,7 +58,7 @@ module.exports = {
 ```
 
 #### 3. Start Pi Finder
-Add the pi finder to the start up
+You can restart your Pi or start the pi-finder manually.
 ```bash
 $ sudo service pi-finder start
 ```
