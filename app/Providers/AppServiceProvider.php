@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace PiFinder\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

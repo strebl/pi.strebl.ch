@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace PiFinder\Http\Controllers;
 
-use App\Device;
-use App\Services\MarkdownParser;
+use PiFinder\Device;
+use PiFinder\Services\MarkdownParser;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Filesystem\Filesystem;
 

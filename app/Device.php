@@ -1,6 +1,6 @@
 <?php
 
-namespace app;
+namespace PiFinder;
 
 use Illuminate\Database\Eloquent\Model;
 

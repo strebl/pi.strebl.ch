@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Transformers;
+namespace PiFinder\Transformers;
 
 class DeviceTransformer extends Transformer
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace PiFinder\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

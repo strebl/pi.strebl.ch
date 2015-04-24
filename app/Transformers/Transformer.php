@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Transformers;
+namespace PiFinder\Transformers;
 
 abstract class Transformer
 {

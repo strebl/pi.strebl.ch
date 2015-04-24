@@ -13,7 +13,7 @@ class ApiHelper extends \Codeception\Module
     {
         $this->debug('MIGRATING BEFORE RUN');
         $this->getModule('Laravel5')
-             ->grabService('App\Console\Kernel')
+             ->grabService('PiFinder\Console\Kernel')
              ->call('migrate');
     }
 

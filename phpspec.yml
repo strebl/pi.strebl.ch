@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: PiFinder
+        psr4_prefix: PiFinder
         src_path: app

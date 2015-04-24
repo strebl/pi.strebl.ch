@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace PiFinder\Http\Controllers\Api;
 
-use App\Device;
-use App\Http\Requests\StoreComputerRequest;
-use App\Transformers\DeviceTransformer;
+use PiFinder\Device;
+use PiFinder\Http\Requests\StoreComputerRequest;
+use PiFinder\Transformers\DeviceTransformer;
 
 class DeviceController extends ApiController
 {

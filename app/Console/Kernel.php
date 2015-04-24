@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console;
+namespace PiFinder\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,8 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'App\Console\Commands\Inspire',
-        'App\Console\Commands\FlushOldDevices',
+        'PiFinder\Console\Commands\Inspire',
+        'PiFinder\Console\Commands\FlushOldDevices',
     ];
 
     /**

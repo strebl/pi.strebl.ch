@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands;
+namespace PiFinder\Commands;
 
 abstract class Command
 {

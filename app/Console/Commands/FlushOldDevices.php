@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Console\Commands;
+namespace PiFinder\Console\Commands;
 
-use App\Device;
+use PiFinder\Device;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 

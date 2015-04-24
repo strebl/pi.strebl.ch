@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace PiFinder\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use PiFinder\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
 
 class ApiController extends Controller
