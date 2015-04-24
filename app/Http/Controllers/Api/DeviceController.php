@@ -1,83 +1,84 @@
-<?php namespace App\Http\Controllers\Api;
+<?php
+
+namespace app\Http\Controllers\Api;
 
 use App\Device;
-use App\Http\Requests;
-
 use App\Http\Requests\StoreComputerRequest;
 use App\Transformers\DeviceTransformer;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 
-class DeviceController extends ApiController {
-
+class DeviceController extends ApiController
+{
     /**
      * @var DeviceTransformer
      */
     private $transformer;
 
-    function __construct(DeviceTransformer $transformer)
+    public function __construct(DeviceTransformer $transformer)
     {
         $this->transformer = $transformer;
     }
 
     /**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$devices = Device::all();
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $devices = Device::all();
 
         return $this->respond([
-            'data' => $this->transformer->transformCollection($devices->all())
+            'data' => $this->transformer->transformCollection($devices->all()),
         ]);
-	}
+    }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param StoreComputerRequest $request
+     *
      * @return Response
      */
-	public function store(StoreComputerRequest $request)
-	{
+    public function store(StoreComputerRequest $request)
+    {
         $device = Device::create($request->all());
 
         return $this->respondCreated($this->transformer->transform($device), $device->id);
-	}
+    }
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
         $device = Device::find($id);
 
-        if(! $device) {
+        if (!$device) {
             return $this->respondNotFound('Did not find the device you are looking for!');
         }
 
         return $this->respond([
-            'data' => $this->transformer->transform($device)
+            'data' => $this->transformer->transform($device),
         ]);
-	}
+    }
 
     /**
      * Update the specified resource in storage.
      *
      * @param StoreComputerRequest $request
-     * @param  int $id
+     * @param int                  $id
+     *
      * @return Response
      */
-	public function update(StoreComputerRequest $request, $id)
-	{
+    public function update(StoreComputerRequest $request, $id)
+    {
         $device = Device::find($id);
 
-        if(! $device) {
+        if (!$device) {
             return $this->respondNotFound('Did not find the device you are looking for!');
         }
 
@@ -86,21 +87,22 @@ class DeviceController extends ApiController {
         $device->save();
 
         return $this->respond([
-            'data' => $this->transformer->transform($device)
+            'data' => $this->transformer->transform($device),
         ]);
-	}
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
     {
         $device = Device::find($id);
 
-        if(! $device) {
+        if (!$device) {
             return $this->respondNotFound('Did not find the device you are looking for!');
         }
 
@@ -113,7 +115,9 @@ class DeviceController extends ApiController {
      * Handle device pokes.
      *
      * @param StoreComputerRequest $request
+     *
      * @return Response
+     *
      * @throws \Exception
      */
     public function poke(StoreComputerRequest $request)
@@ -124,5 +128,4 @@ class DeviceController extends ApiController {
 
         return $this->respondPoked($this->transformer->transform($device), $device->id);
     }
-
 }

@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Transformers;
+namespace app\Transformers;
 
-abstract class Transformer {
-
+abstract class Transformer
+{
     /**
-     * Transform a collection of items
+     * Transform a collection of items.
      *
      * @param array $items
+     *
      * @return array
      */
     public function transformCollection(array $items)
@@ -15,5 +16,5 @@ abstract class Transformer {
         return array_map([$this, 'transform'], $items);
     }
 
-    public abstract function transform($item);
+    abstract public function transform($item);
 }

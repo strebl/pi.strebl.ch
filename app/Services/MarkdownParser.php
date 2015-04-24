@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Services;
+namespace app\Services;
 
 use ParsedownExtra;
 
-class MarkdownParser {
-
+class MarkdownParser
+{
     /**
-     * Markdown parser instance
+     * Markdown parser instance.
      *
      * @var ParsedownExtra
      */
@@ -24,9 +24,10 @@ class MarkdownParser {
     }
 
     /**
-     * Parse a markdown document
+     * Parse a markdown document.
      *
      * @param $path
+     *
      * @return mixed|string
      */
     public function parse($path)

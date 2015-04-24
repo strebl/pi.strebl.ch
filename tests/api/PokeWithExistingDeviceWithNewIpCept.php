@@ -1,4 +1,5 @@
 <?php
+
 $I = new ApiTester($scenario);
 $I->wantTo('poke the server with an existing device and a new IP');
 
@@ -25,7 +26,7 @@ $I->seeResponseContainsJson([
         'ip' => '192.168.1.100',
         'mac' => '00:19:20:A1:B4:FC',
         'name' => 'Manuel',
-    ]
+    ],
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
 $I->seeResponseJsonMatchesXpath('//data//last_contact');

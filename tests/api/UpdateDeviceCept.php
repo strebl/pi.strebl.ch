@@ -1,4 +1,5 @@
 <?php
+
 $I = new ApiTester($scenario);
 $I->wantTo('update a device');
 
@@ -37,7 +38,7 @@ $updatedDevice = $I->grabRecord('devices', ['ip' => '192.168.1.102']);
 $I->cantSeeRecord('devices', [
     'ip' => '192.168.1.101',
     'mac' => '11:22:33:44:55:66',
-    'name' => 'Awesome Pi One'
+    'name' => 'Awesome Pi One',
 ]);
 $updated_created_at_timestamp = $I->carbonize($updatedDevice->created_at);
 $updated_updated_at_timestamp = $I->carbonize($updatedDevice->updated_at);

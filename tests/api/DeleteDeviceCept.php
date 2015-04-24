@@ -1,4 +1,5 @@
 <?php
+
 $I = new ApiTester($scenario);
 $I->wantTo('delete a device');
 

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 $I = new ApiTester($scenario);
 $I->wantTo('list all devices');
 
@@ -30,7 +31,7 @@ $I->seeResponseContainsJson([
         'name' => 'Awesome Pi One',
         'device_added' => \Carbon\Carbon::parse($piOne->created_at)->toIso8601String(),
         'last_contact' => \Carbon\Carbon::parse($piOne->updated_at)->toIso8601String(),
-    ]
+    ],
 ]);
 $I->seeResponseContainsJson([
     'data' => [
@@ -39,5 +40,5 @@ $I->seeResponseContainsJson([
         'name' => 'Awesome Pi Two',
         'device_added' => \Carbon\Carbon::parse($piTwo->created_at)->toIso8601String(),
         'last_contact' => \Carbon\Carbon::parse($piTwo->updated_at)->toIso8601String(),
-    ]
+    ],
 ]);

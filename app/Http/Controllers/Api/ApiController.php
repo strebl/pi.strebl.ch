@@ -1,15 +1,15 @@
-<?php namespace App\Http\Controllers\Api;
+<?php
 
-use App\Http\Requests;
+namespace app\Http\Controllers\Api;
+
 use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
-class ApiController extends Controller {
-
+class ApiController extends Controller
+{
     /**
-     * Default Status Code
+     * Default Status Code.
+     *
      * @var int
      */
     protected $statusCode = 200;
@@ -24,6 +24,7 @@ class ApiController extends Controller {
 
     /**
      * @param int $statusCode
+     *
      * @return $this
      */
     public function setStatusCode($statusCode)
@@ -35,12 +36,13 @@ class ApiController extends Controller {
 
     /**
      * @param array $data
+     *
      * @return mixed
      */
     public function respondCreated($data, $id)
     {
         $headers = [
-            'Location' => route('api.v1.devices.show', $id)
+            'Location' => route('api.v1.devices.show', $id),
         ];
 
         return $this->setStatusCode(201)->respond(compact('data'), $headers);
@@ -48,12 +50,13 @@ class ApiController extends Controller {
 
     /**
      * @param array $data
+     *
      * @return mixed
      */
     public function respondPoked($data, $id)
     {
         $headers = [
-            'Location' => route('api.v1.devices.show', $id)
+            'Location' => route('api.v1.devices.show', $id),
         ];
 
         return $this->setStatusCode(200)->respond(compact('data'), $headers);
@@ -69,6 +72,7 @@ class ApiController extends Controller {
 
     /**
      * @param string $message
+     *
      * @return mixed
      */
     public function respondNotFound($message = 'Did not find the resource you are looking for!')
@@ -79,6 +83,7 @@ class ApiController extends Controller {
     /**
      * @param $data
      * @param array $headers
+     *
      * @return mixed
      */
     public function respond($data, $headers = [])
@@ -88,6 +93,7 @@ class ApiController extends Controller {
 
     /**
      * @param $message
+     *
      * @return mixed
      */
     public function respondWithError($message)
@@ -96,8 +102,7 @@ class ApiController extends Controller {
             'errors' => [
                 'title' => $message,
                 'status' => $this->getStatusCode(),
-            ]
+            ],
         ]);
     }
-
 }

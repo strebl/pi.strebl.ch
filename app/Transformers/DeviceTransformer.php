@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Transformers;
+namespace app\Transformers;
 
-class DeviceTransformer extends Transformer {
-
+class DeviceTransformer extends Transformer
+{
     public function transform($device)
     {
         return [
