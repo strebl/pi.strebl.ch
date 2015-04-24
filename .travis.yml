@@ -4,7 +4,12 @@ php:
   - 5.4
   - 5.5
   - 5.6
+  - 7.0
   - hhvm
+
+matrix:
+    allow_failures:
+        - php: 7.0
 
 env:
   - APP_ENV=testing APP_DEBUG=true SQLITE_DATABASE=:memory:
@@ -13,6 +18,7 @@ sudo: false
 
 install:
   - travis_retry composer install --no-interaction --prefer-source --dev
+  - php artisan env
   - php artisan migrate
 
 script:
