@@ -14,4 +14,9 @@ class ExampleTest extends TestCase {
 		$this->assertEquals(200, $response->getStatusCode());
 	}
 
+	public function testDatabaseEnv()
+	{
+		$this->assertEquals(':memory:', env('SQLITE_DATABASE'));
+	}
+
 }
