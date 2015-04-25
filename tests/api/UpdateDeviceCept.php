@@ -48,3 +48,11 @@ $I->assertTrue($updated_updated_at_timestamp->gt($updated_at),
     'Updated updated_at timestamp is greater than the initial updated_at timestamp');
 $I->assertTrue($updated_updated_at_timestamp->gt($created_at),
     'Updated updated_at timestamp is greater than the initial created_at timestamp');
+
+$I->sendPATCH('devices/100', [
+    'ip'   => '192.168.1.102',
+    'mac'  => 'AA:BB:CC:DD:EE:FF',
+    'name' => 'Updated Awesome Pi One',
+]);
+$I->seeResponseCodeIs(404);
+$I->seeResponseIsJson();
