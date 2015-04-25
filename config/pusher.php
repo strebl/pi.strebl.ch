@@ -2,20 +2,20 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Connection Name
-	|--------------------------------------------------------------------------
-	|
-	| Here you may specify which of the connections below you wish to use as
-	| your default connection for all work. Of course, you may use many
-	| connections at once using the manager class.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Default Connection Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify which of the connections below you wish to use as
+    | your default connection for all work. Of course, you may use many
+    | connections at once using the manager class.
+    |
+    */
 
-	'default' => 'main',
+    'default' => 'main',
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | Pusher Connections
     |--------------------------------------------------------------------------
@@ -26,18 +26,18 @@ return [
     |
     */
 
-	'connections' => [
+    'connections' => [
 
-		'main' => [
-			'auth_key' => env('PUSHER_KEY'),
-			'secret' => env('PUSHER_SECRET'),
-			'app_id' => env('PUSHER_APP_ID'),
-			'options' => [],
-			'host' => null,
-			'port' => null,
-			'timeout' => null
-		],
+        'main' => [
+            'auth_key' => env('PUSHER_KEY'),
+            'secret'   => env('PUSHER_SECRET'),
+            'app_id'   => env('PUSHER_APP_ID'),
+            'options'  => [],
+            'host'     => null,
+            'port'     => null,
+            'timeout'  => null,
+        ],
 
-	]
+    ],
 
 ];

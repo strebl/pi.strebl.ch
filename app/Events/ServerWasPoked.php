@@ -1,36 +1,35 @@
-<?php namespace PiFinder\Events;
+<?php
 
-use PiFinder\Device;
-use PiFinder\Events\Event;
+namespace PiFinder\Events;
 
 use Illuminate\Queue\SerializesModels;
+use PiFinder\Device;
 
-class ServerWasPoked extends Event {
+class ServerWasPoked extends Event
+{
+    use SerializesModels;
 
-	use SerializesModels;
+    /**
+     * @var Device
+     */
+    protected $device;
 
-	/**
-	 * @var Device
-	 */
-	protected $device;
+    /**
+     * Create a new event instance.
+     *
+     * @param Device $device
+     */
+    public function __construct(Device $device)
+    {
+        //
+        $this->device = $device;
+    }
 
-	/**
-	 * Create a new event instance.
-	 *
-	 * @param Device $device
-	 */
-	public function __construct(Device $device)
-	{
-		//
-		$this->device = $device;
-	}
-
-	/**
-	 * @return Device
-	 */
-	public function getDevice()
-	{
-		return $this->device;
-	}
-
+    /**
+     * @return Device
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
 }

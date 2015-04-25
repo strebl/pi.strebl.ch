@@ -69,8 +69,7 @@ class FlushOldDevices extends Command
 
         $affectedRows = $devices->count();
 
-        foreach($devices as $device)
-        {
+        foreach ($devices as $device) {
             $device->delete();
         }
 
