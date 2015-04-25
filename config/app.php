@@ -121,6 +121,7 @@ return [
         'Illuminate\Routing\ControllerServiceProvider',
         'Illuminate\Cookie\CookieServiceProvider',
         'Illuminate\Database\DatabaseServiceProvider',
+        'PiFinder\Providers\ObserverServiceProvider',
         'Illuminate\Encryption\EncryptionServiceProvider',
         'Illuminate\Filesystem\FilesystemServiceProvider',
         'Illuminate\Foundation\Providers\FoundationServiceProvider',
@@ -135,6 +136,11 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
+
+        /*
+         * Package Service Providers...
+         */
+        'Vinkla\Pusher\PusherServiceProvider',
 
         /*
          * Application Service Providers...

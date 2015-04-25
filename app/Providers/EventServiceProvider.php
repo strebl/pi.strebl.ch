@@ -4,6 +4,7 @@ namespace PiFinder\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use PiFinder\Device;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,8 +14,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'event.name' => [
-            'EventListener',
+        'PiFinder\Events\ServerWasPoked' => [
+            'PiFinder\Handlers\Events\NotifyUsersAboutPoke',
         ],
     ];
 
