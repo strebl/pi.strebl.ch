@@ -2,6 +2,7 @@
 [![Build Status](https://img.shields.io/travis/strebl/pi.strebl.ch.svg?style=flat-square)](https://travis-ci.org/strebl/pi.strebl.ch)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/strebl/pi.strebl.ch.svg?style=flat-square)](https://scrutinizer-ci.com/g/strebl/pi.strebl.ch/?branch=master)
 [![StyleCI](https://styleci.io/repos/33052778/shield)](https://styleci.io/repos/33052778)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/strebl/pi.strebl.ch.svg?style=flat-square)](https://scrutinizer-ci.com/g/strebl/pi.strebl.ch/code-structure/master)
 [![GitHub license](https://img.shields.io/github/license/strebl/pi.strebl.ch.svg?style=flat-square)](https://github.com/strebl/pi.strebl.ch/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/strebl/pi.strebl.ch.svg?style=flat-square)](https://github.com/strebl/pi.strebl.ch/releases)
 
