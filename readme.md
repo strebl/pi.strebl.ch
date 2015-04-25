@@ -1,23 +1,19 @@
-## Laravel PHP Framework
+# pi.strebl.ch
+[![Build Status](https://img.shields.io/travis/strebl/pi.strebl.ch.svg?style=flat-square)](https://travis-ci.org/strebl/pi.strebl.ch)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/strebl/pi.strebl.ch.svg?style=flat-square)](https://scrutinizer-ci.com/g/strebl/pi.strebl.ch/?branch=master)
+[![StyleCI](https://styleci.io/repos/33052778/shield)](https://styleci.io/repos/33052778)
+[![GitHub license](https://img.shields.io/github/license/strebl/pi.strebl.ch.svg?style=flat-square)](https://github.com/strebl/pi.strebl.ch/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/strebl/pi.strebl.ch.svg?style=flat-square)](https://github.com/strebl/pi.strebl.ch/releases)
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[**pi.strebl.ch**](https://pi.strebl.ch) is the free backend service for the [**Pi Finder**](https://github.com/strebl/pi-finder#pi-finder-).  
+The Pi Finder lets you find your Raspberry Pi or any other unix based device in your network.  
+Read the [Introduction](https://pi.strebl.ch/getting-started#Introduction) for more information.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+You can configure the Pi Finder to talk to your own Poke Server. Just set up this Repo on your own server and modify the Pi Finder configuration on your device.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Contribution
+Thank you for considering to contribute. Just open a issue or create a pull request if you are willing to contribute.
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+This repo is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
