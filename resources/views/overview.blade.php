@@ -73,7 +73,7 @@
 
         var serverOffset = moment($('meta[name=server-time]').attr('content')).diff(new Date()) + 1000;
 
-        var pusher = new Pusher('12c08c4e997e7aa5c0f1');
+        var pusher = new Pusher({{ env('PUSHER_KEY') }});
         var channel = pusher.subscribe('pi-finder');
 
         channel.bind('DeviceWasDeleted', function(data) {
