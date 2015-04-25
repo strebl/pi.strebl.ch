@@ -47,6 +47,7 @@
     <meta name="msapplication-square150x150logo" content="/img/favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="/img/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/img/favicon/mstile-310x310.png" />
+    <meta name="server-time" content="{{ \Carbon\Carbon::now() }}" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -82,6 +83,8 @@
 <script src="/js/flat-ui-pro.min.js"></script>
 <script src="/js/sweet-alert.min.js"></script>
 <script src="/js/prism.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<script src="//js.pusher.com/2.2/pusher.min.js"></script>
 @yield('javascript')
 
 </body>

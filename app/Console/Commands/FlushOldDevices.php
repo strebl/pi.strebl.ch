@@ -65,7 +65,13 @@ class FlushOldDevices extends Command
     {
         $date = Carbon::now()->subMinutes(15);
 
-        $affectedRows = Device::where('updated_at', '<', $date)->delete();
+        $devices = Device::where('updated_at', '<', $date)->get();
+
+        $affectedRows = $devices->count();
+
+        foreach ($devices as $device) {
+            $device->delete();
+        }
 
         return $affectedRows;
     }

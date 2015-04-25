@@ -2,7 +2,9 @@
 
 namespace PiFinder\Http\Controllers\Api;
 
+use Carbon\Carbon;
 use PiFinder\Device;
+use PiFinder\Events\ServerWasPoked;
 use PiFinder\Http\Requests\StoreComputerRequest;
 use PiFinder\Transformers\DeviceTransformer;
 
@@ -125,6 +127,8 @@ class DeviceController extends ApiController
         $device = Device::firstOrNew(['mac' => $request->mac]);
 
         $device->fill($request->all())->touch();
+
+        event(new ServerWasPoked(array_add($device, 'server_time', Carbon::now()->toDateTimeString())));
 
         return $this->respondPoked($this->transformer->transform($device), $device->id);
     }

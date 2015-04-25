@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'event.name' => [
-            'EventListener',
+        'PiFinder\Events\ServerWasPoked' => [
+            'PiFinder\Handlers\Events\NotifyUsersAboutPoke',
         ],
     ];
 
