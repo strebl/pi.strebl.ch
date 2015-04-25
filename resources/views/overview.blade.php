@@ -96,8 +96,8 @@
                 var newRow = "<tr class=\"device-row\" id=\"device-" + data.device.id + "\"> \
                     <td class=\"device-name\">" + data.device.name + "</td> \
                     <td class=\"device-ip\">" + data.device.ip + "</td> \
-                    <td data-timestamp=\"" + data.device.created_at + "\" class=\"device-created_at\">" + moment(data.device.created_at).subtract('milliseconds', serverOffset).fromNow() + "</td> \
-                    <td data-timestamp=\"" + data.device.updated_at + "\" class=\"device-updated_at\">" + moment(data.device.updated_at).subtract('milliseconds', serverOffset).fromNow() + "</td> \
+                    <td data-timestamp=\"" + data.device.created_at + "\" class=\"device-created_at\">" + moment(data.device.created_at).subtract(serverOffset, 'milliseconds').fromNow() + "</td> \
+                    <td data-timestamp=\"" + data.device.updated_at + "\" class=\"device-updated_at\">" + moment(data.device.updated_at).subtract(serverOffset, 'milliseconds').fromNow() + "</td> \
                 </tr>";
 
                 $('#device-table tr:last').after(newRow);
@@ -111,7 +111,7 @@
 
         var updateTime = function() {
             $('.device-updated_at').each(function() {
-                $(this).text( moment( $(this).data('timestamp')).subtract('milliseconds', serverOffset).fromNow() );
+                $(this).text( moment( $(this).data('timestamp')).subtract(serverOffset, 'milliseconds').fromNow() );
             });
         }
 
