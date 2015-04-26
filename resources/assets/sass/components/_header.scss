@@ -1,0 +1,86 @@
+@include component(app-header) {
+  color: #fff;
+  background-color: #3473db;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.50);
+  position: relative;
+
+  &:after {
+    content: "\f111";
+    color: #2e6dd7;
+    font-family: "FontMfizz";
+    font-size: 1000px;
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    line-height: 0.2;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  @include part(icon) {
+    font-size: 160px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+
+    a,
+    a:hover {
+      color: white;
+    }
+  }
+
+  @include part(title) {
+    font-weight: 300;
+    font-size: 84px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+
+    a,
+    a:hover {
+      color: white;
+    }
+  }
+
+  @include part(subtitle) {
+    font-weight: 300;
+    font-size: 18px;
+    margin: 30px auto;
+    position: relative;
+    z-index: 1;
+
+    a {
+      color: white;
+      border-bottom: solid 1px white;
+    }
+  }
+
+  @include part(nav) {
+    tab-size: 18px;
+    z-index: 2;
+    position: relative;
+    float: left;
+    margin-left: 25px;
+    color: white;
+    font-weight: 300;
+
+    &:hover {
+      color: #ededed;
+    }
+
+    @include option(right) {
+      float: right;
+      right: 25px;
+      margin-left: 0px;
+    }
+  }
+}

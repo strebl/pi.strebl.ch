@@ -1,5 +1,7 @@
 /vendor
 /node_modules
+/bower_components
+/.sass-cache
 .env
 /.idea
 tests/_output/*

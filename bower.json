@@ -1,0 +1,10 @@
+{
+  "name": "pi.strebl.ch",
+  "dependencies": {
+    "csstyle": "~1.4.0",
+    "bootstrap-sass": "~3.3.4",
+    "font-awesome": "~4.3.0",
+    "sweetalert": "~0.5.0",
+    "prism": "*"
+  }
+}

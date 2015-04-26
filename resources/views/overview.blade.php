@@ -6,11 +6,11 @@
 
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <div class="tile tile--shadow hidden">
+                    <div class="tile --shadow hidden">
                         <h2>Nope!</h2>
                         <p class="lead">No Pi poked me yet.</p>
                     </div>
-                    <div class="table-container table-responsive">
+                    <div class="table-container">
                         <table class="table" id="device-table">
                             @include('partials.device-table-header')
                             @foreach($devices as $device)
@@ -31,11 +31,11 @@
 
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <div class="tile tile--shadow">
+                    <div class="tile --shadow">
                         <h2>Nope!</h2>
                         <p class="lead">No Pi poked me yet.</p>
                     </div>
-                    <div class="table-container table-responsive">
+                    <div class="table-container">
                         <table class="table hidden" id="device-table">
                             @include('partials.device-table-header')
                         </table>

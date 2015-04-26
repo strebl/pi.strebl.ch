@@ -5,26 +5,8 @@
     <title>Pi Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Loading Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Loading Font Awesome -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <!-- Loading Flat UI Pro -->
-    <link href="/css/flat-ui-pro.min.css" rel="stylesheet">
-
     <!-- Loading App css -->
     <link href="/css/app.css" rel="stylesheet">
-
-    <!-- Loading Sweet Alert -->
-    <link rel="stylesheet" type="text/css" href="/css/sweet-alert.css">
-
-    <!-- Loading mfizz Font -->
-    <link rel="stylesheet" type="text/css" href="/css/font-mfizz.css">
-
-    <!-- Loading Prism -->
-    <link rel="stylesheet" type="text/css" href="/css/prism.css">
 
     <!--<link rel="shortcut icon" href="/img/favicon/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png" />
@@ -60,15 +42,15 @@
 <body>
 {{-- @include('layouts.partials.navbar') --}}
 
-<div class="container__header">
-    <a href="/getting-started" class="home-nav">Getting Started</a>
-    <!-- <a href="/getting-started" class="home-nav--right">Introduction</a> -->
+<div class="app-header">
+    <a href="/getting-started" class="app-header__nav">Getting Started</a>
+    <!-- <a href="/getting-started" class="app-header__nav --right">Introduction</a> -->
     <div class="container">
-        <div class="page-icon">
+        <div class="app-header__icon">
             <a href="/"><span class="icon-raspberrypi"></span></a>
         </div>
-        <h1 class="page-title"><a href="/">Pi Finder</a></h1>
-        <h2 class="page-title__sub">
+        <h1 class="app-header__title"><a href="/">Pi Finder</a></h1>
+        <h2 class="app-header__subtitle">
             Find your Raspberry Pi or any other unix based device in your network.
             <a href="/getting-started">Easy.</a>
         </h2>
