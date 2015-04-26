@@ -6,7 +6,7 @@
 
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <div class="tile --shadow hidden">
+                    <div class="tile --shadow js-no-devices hidden">
                         <h2>Nope!</h2>
                         <p class="lead">No Pi poked me yet.</p>
                     </div>
@@ -31,7 +31,7 @@
 
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <div class="tile --shadow">
+                    <div class="tile --shadow js-no-devices">
                         <h2>Nope!</h2>
                         <p class="lead">No Pi poked me yet.</p>
                     </div>
@@ -80,7 +80,7 @@
             $('#device-' + data.device.id).remove();
 
             if(! $('.device-row').length) {
-                $('.tile--shadow').removeClass('hidden');
+                $('.js-no-devices').removeClass('hidden');
                 $('#device-table').addClass('hidden');
             }
         });
@@ -104,7 +104,7 @@
             }
 
             if($('.device-row').length) {
-                $('.tile--shadow').addClass('hidden');
+                $('.js-no-devices').addClass('hidden');
                 $('#device-table').removeClass('hidden');
             }
         });

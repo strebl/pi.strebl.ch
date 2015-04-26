@@ -12,5 +12,20 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss', null, null, true);
+    mix.rubySass('app.scss');
+
+    mix.scripts([
+        'html5shiv/dist/html5shiv.min.js',
+        'respond/dest/respond.min.js'
+    ], 'public/js/ie.min.js', 'bower_components');
+
+    mix.scripts([
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/sweetalert/lib/sweet-alert.min.js',
+        'bower_components/moment/min/moment.min.js',
+        'bower_components/pusher/dist/pusher.min.js',
+        'resources/js/vendor/flat-ui-pro.min.js',
+        'resources/js/vendor/prism.js',
+        'resources/js/app.js'
+    ], null, './');
 });

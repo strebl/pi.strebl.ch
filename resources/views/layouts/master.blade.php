@@ -35,11 +35,10 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="/js/html5shiv.js"></script>
-    <script src="/js/respond.min.js"></script>
+    <script src="/js/ie.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body id="csstyle">
 {{-- @include('layouts.partials.navbar') --}}
 
 <div class="app-header">
@@ -59,14 +58,7 @@
 
 @yield('content')
 
-<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-<script src="/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/flat-ui-pro.min.js"></script>
-<script src="/js/sweet-alert.min.js"></script>
-<script src="/js/prism.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="//js.pusher.com/2.2/pusher.min.js"></script>
+<script src="/js/all.js"></script>
 @yield('javascript')
 
 </body>
