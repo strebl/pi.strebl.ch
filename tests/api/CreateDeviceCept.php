@@ -2,6 +2,14 @@
 
 $I = new ApiTester($scenario);
 $I->wantTo('create a new device');
+
+$I->sendPOST('devices', [
+    'mac'  => '00:19:20:A1:B4:FC',
+    'name' => 'Manuel',
+]);
+$I->seeResponseCodeIs(422);
+$I->seeResponseIsJson();
+
 $I->sendPOST('devices', [
     'ip'   => '192.168.1.123',
     'mac'  => '00:19:20:A1:B4:FC',
