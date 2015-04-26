@@ -11,7 +11,7 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
+elixir(function (mix) {
     mix.rubySass('app.scss');
 
     mix.scripts([
@@ -28,4 +28,6 @@ elixir(function(mix) {
         'resources/js/vendor/prism.js',
         'resources/js/app.js'
     ], null, './');
+
+    mix.version(['css/app.css', 'js/all.js']);
 });

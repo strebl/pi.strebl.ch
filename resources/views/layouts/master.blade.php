@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading App css -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ elixir("css/app.css") }}" rel="stylesheet">
 
     <!--<link rel="shortcut icon" href="/img/favicon/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png" />
@@ -58,7 +58,7 @@
 
 @yield('content')
 
-<script src="/js/all.js"></script>
+<script src={{ elixir("js/all.js") }}></script>
 @yield('javascript')
 
 </body>
