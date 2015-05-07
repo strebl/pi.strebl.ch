@@ -34,4 +34,8 @@ return [
         'secret' => '',
     ],
 
+    'bugsnag' => [
+        'api_key'  => env('BUGSNAG_KEY'),
+    ],
+
 ];

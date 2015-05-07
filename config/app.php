@@ -141,6 +141,7 @@ return [
          * Package Service Providers...
          */
         'Vinkla\Pusher\PusherServiceProvider',
+        'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
 
         /*
          * Application Service Providers...
@@ -198,6 +199,7 @@ return [
         'URL'       => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
+        'Bugsnag'   => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
 
     ],
 
