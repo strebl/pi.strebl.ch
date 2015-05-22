@@ -33,6 +33,6 @@ class NotifyUsersAboutPoke
      */
     public function handle(ServerWasPoked $event)
     {
-        $this->pusher->trigger('pi-finder', 'ServerWasPoked', ['device' => $event->getDevice()->toArray()]);
+        $this->pusher->trigger(env('PUSHER_CHANNEL', 'pi-finder'), 'ServerWasPoked', ['device' => $event->getDevice()->toArray()]);
     }
 }

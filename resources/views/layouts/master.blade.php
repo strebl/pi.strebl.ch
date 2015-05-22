@@ -30,6 +30,7 @@
     <meta name="msapplication-wide310x150logo" content="/img/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/img/favicon/mstile-310x310.png" />
     <meta name="server-time" content="{{ \Carbon\Carbon::now() }}" />
+    <meta name="pusher-channel" content="{{ env('PUSHER_CHANNEL', 'pi-finder') }}" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
