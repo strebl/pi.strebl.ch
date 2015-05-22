@@ -25,3 +25,7 @@ $I->seeRecord('devices', [
     'mac'  => '00:19:20:A1:B4:FC',
     'name' => 'Manuel',
 ]);
+$I->seeRecord('pokes', [
+    'ip'   => '192.168.1.123',
+    'mac'  => '00:19:20:A1:B4:FC',
+]);

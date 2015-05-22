@@ -1,6 +1,6 @@
 @include component(app-header) {
   color: #fff;
-  background-color: #3473db;
+  background-color: $main-color;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;

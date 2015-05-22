@@ -7,4 +7,11 @@ namespace Codeception\Module;
 
 class FunctionalHelper extends \Codeception\Module
 {
+    public function _beforeStep()
+    {
+        $this->debug('MIGRATING BEFORE RUN');
+        $this->getModule('Laravel5')
+            ->grabService('PiFinder\Console\Kernel')
+            ->call('migrate');
+    }
 }

@@ -5,6 +5,7 @@ namespace PiFinder\Http\Controllers;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Filesystem\Filesystem;
 use PiFinder\Device;
+use PiFinder\Poke;
 use PiFinder\Services\MarkdownParser;
 
 class WelcomeController extends Controller
@@ -59,5 +60,20 @@ class WelcomeController extends Controller
         });
 
         return view('getting-started')->with(compact('gettingStarted'));
+    }
+
+    /**
+     * Show the statistics screen to the user.
+     *
+     * @return Response
+     */
+    public function statistics()
+    {
+        $base = 189771;
+        $pokes_total = Poke::count() + $base;
+
+        $devices_total = Poke::distinct()->count('mac');
+
+        return view('statistics')->with(compact('pokes_total', 'devices_total'));
     }
 }

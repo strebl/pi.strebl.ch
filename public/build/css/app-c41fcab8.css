@@ -1261,7 +1261,7 @@ mark,
 .text-capitalize {
   text-transform: capitalize; }
 
-.text-muted {
+.text-muted, .statistics__title {
   color: #777777; }
 
 .text-primary {
@@ -9045,7 +9045,7 @@ small,
   font-size: 83%;
   line-height: 2.067; }
 
-.text-muted {
+.text-muted, .statistics__title {
   color: #bdc3c7; }
 
 .text-inverse {
@@ -17183,5 +17183,24 @@ body {
     border-top: 0px;
     border-bottom: 0px;
     font-size: 0.8em; }
+
+.statistics {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .statistics__statistic {
+    text-align: center;
+    line-height: 1.2;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px; }
+  .statistics__icon {
+    font-size: 2.5em;
+    color: #8bafea;
+    color: #3498db; }
+  .statistics__value {
+    color: #808080;
+    font-size: 5em; }
+  .statistics__title {
+    color: #808080; }
 
 /*# sourceMappingURL=app.css.map */

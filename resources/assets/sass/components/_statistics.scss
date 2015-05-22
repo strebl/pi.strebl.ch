@@ -1,0 +1,29 @@
+@include component(statistics) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @include part(statistic) {
+    text-align: center;
+    line-height: 1.2;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  @include part(icon) {
+    font-size: 2.5em;
+    color: lighten($main-color, 20%);
+    color: #3498db;
+  }
+
+  @include part(value) {
+    color: #808080;
+    font-size: 5em;
+  }
+
+  @include part(title) {
+    @extend .text-muted;
+    color: #808080;
+  }
+
+}
