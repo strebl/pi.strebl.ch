@@ -5,6 +5,7 @@ namespace PiFinder\Http\Controllers;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Filesystem\Filesystem;
 use PiFinder\Device;
+use PiFinder\Poke;
 use PiFinder\Services\MarkdownParser;
 
 class WelcomeController extends Controller
@@ -68,6 +69,10 @@ class WelcomeController extends Controller
      */
     public function statistics()
     {
-        return view('statistics');
+        $pokes_total = Poke::count();
+
+        $devices_total = Poke::distinct()->count('mac');
+
+        return view('statistics')->with(compact('pokes_total', 'devices_total'));
     }
 }
