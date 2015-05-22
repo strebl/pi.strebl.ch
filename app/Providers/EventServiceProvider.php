@@ -15,6 +15,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'PiFinder\Events\ServerWasPoked' => [
             'PiFinder\Handlers\Events\NotifyUsersAboutPoke',
+            'PiFinder\Handlers\Events\UpdateStatistics',
         ],
     ];
 
