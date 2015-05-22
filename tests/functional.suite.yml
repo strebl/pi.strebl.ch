@@ -6,4 +6,8 @@
 
 class_name: FunctionalTester
 modules:
-    enabled: [Filesystem, FunctionalHelper]
+    enabled: [Filesystem, FunctionalHelper, Laravel5]
+    config:
+      Laravel5:
+        environment_file: .env.testing
+        cleanup: false
