@@ -60,4 +60,14 @@ class WelcomeController extends Controller
 
         return view('getting-started')->with(compact('gettingStarted'));
     }
+
+    /**
+     * Show the statistics screen to the user.
+     *
+     * @return Response
+     */
+    public function statistics()
+    {
+        return view('statistics');
+    }
 }
