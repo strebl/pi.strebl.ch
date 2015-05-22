@@ -2,8 +2,8 @@
 
 namespace PiFinder\Exceptions;
 
-use Exception;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
+use Exception;
 
 class Handler extends ExceptionHandler
 {
