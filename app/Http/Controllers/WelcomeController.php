@@ -69,7 +69,8 @@ class WelcomeController extends Controller
      */
     public function statistics()
     {
-        $pokes_total = Poke::count();
+        $base = 189771;
+        $pokes_total = Poke::count() + $base;
 
         $devices_total = Poke::distinct()->count('mac');
 
