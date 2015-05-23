@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        'PiFinder\Console\Commands\Inspire',
         'PiFinder\Console\Commands\FlushOldDevices',
     ];
 
