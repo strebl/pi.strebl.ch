@@ -25,8 +25,8 @@ class ApiHelper extends \Codeception\Module
     public function haveAnAccount()
     {
         $user = [
-            'email' => 'manuel@strebl.ch',
-            'password' => 'password'
+            'email'    => 'manuel@strebl.ch',
+            'password' => 'password',
         ];
 
         $this->getModule('Laravel5')->grabService('PiFinder\Services\Registrar')->create($user);
