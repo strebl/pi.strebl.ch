@@ -12,11 +12,11 @@ class FunctionalHelper extends \Codeception\Module
         $this->runConsoleCommand('migrate');
     }
 
-    public function runConsoleCommand($command)
+    public function runConsoleCommand($command, $parameter = [])
     {
         $this->debug('MIGRATING BEFORE RUN');
         $this->getModule('Laravel5')
             ->grabService('PiFinder\Console\Kernel')
-            ->call($command);
+            ->call($command, $parameter);
     }
 }

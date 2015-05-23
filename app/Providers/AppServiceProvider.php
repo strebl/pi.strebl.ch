@@ -3,6 +3,7 @@
 namespace PiFinder\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use PiFinder\Services\Registrar;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'Illuminate\Contracts\Auth\Registrar',
+            Registrar::class
+        );
     }
 }

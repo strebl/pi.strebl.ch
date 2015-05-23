@@ -14,6 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         'PiFinder\Console\Commands\FlushOldDevices',
+        'PiFinder\Console\Commands\UserCreate',
+        'PiFinder\Console\Commands\UserDelete',
     ];
 
     /**
