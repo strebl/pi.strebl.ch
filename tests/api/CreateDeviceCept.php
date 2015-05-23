@@ -3,6 +3,10 @@
 $I = new ApiTester($scenario);
 $I->wantTo('create a new device');
 
+$user = $I->haveAnAccount();
+
+$I->amHttpAuthenticated($user['email'], $user['password']);
+
 $I->sendPOST('devices', [
     'mac'  => '00:19:20:A1:B4:FC',
     'name' => 'Manuel',

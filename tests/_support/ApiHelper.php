@@ -21,4 +21,16 @@ class ApiHelper extends \Codeception\Module
     {
         return Carbon::parse($date);
     }
+
+    public function haveAnAccount()
+    {
+        $user = [
+            'email' => 'manuel@strebl.ch',
+            'password' => 'password'
+        ];
+
+        $this->getModule('Laravel5')->grabService('PiFinder\Services\Registrar')->create($user);
+
+        return $user;
+    }
 }
