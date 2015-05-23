@@ -9,9 +9,14 @@ class FunctionalHelper extends \Codeception\Module
 {
     public function _beforeStep()
     {
+        $this->runConsoleCommand('migrate');
+    }
+
+    public function runConsoleCommand($command)
+    {
         $this->debug('MIGRATING BEFORE RUN');
         $this->getModule('Laravel5')
             ->grabService('PiFinder\Console\Kernel')
-            ->call('migrate');
+            ->call($command);
     }
 }
