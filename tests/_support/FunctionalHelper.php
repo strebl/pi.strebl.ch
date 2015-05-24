@@ -7,16 +7,33 @@ namespace Codeception\Module;
 
 class FunctionalHelper extends \Codeception\Module
 {
+    private $artisan;
+
     public function _beforeStep()
     {
-        $this->runConsoleCommand('migrate');
+        $this->artisan()->call('migrate');
     }
 
     public function runConsoleCommand($command, $parameter = [])
     {
         $this->debug('MIGRATING BEFORE RUN');
-        $this->getModule('Laravel5')
-            ->grabService('PiFinder\Console\Kernel')
-            ->call($command, $parameter);
+
+        $artisan = $this->artisan();
+        $artisan->call($command, $parameter);
+
+        $this->artisan = $artisan;
+    }
+
+    public function seeInLastCommandOutput($search)
+    {
+        $output = $this->artisan->output();
+
+        $this->assertContains($search, $output);
+    }
+
+    private function artisan()
+    {
+        return $this->getModule('Laravel5')
+            ->grabService('PiFinder\Console\Kernel');
     }
 }
