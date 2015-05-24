@@ -3,6 +3,10 @@
 $I = new ApiTester($scenario);
 $I->wantTo('list all devices');
 
+$user = $I->haveAnAccount();
+
+$I->amHttpAuthenticated($user['email'], $user['password']);
+
 $I->haveRecord('devices', [
     'ip'         => '192.168.1.101',
     'mac'        => '11:22:33:44:55:66',

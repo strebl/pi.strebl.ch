@@ -3,6 +3,10 @@
 $I = new ApiTester($scenario);
 $I->wantTo('update a device');
 
+$user = $I->haveAnAccount();
+
+$I->amHttpAuthenticated($user['email'], $user['password']);
+
 $created_at = \Carbon\Carbon::now()->subHour();
 $updated_at = \Carbon\Carbon::now()->subHour();
 
