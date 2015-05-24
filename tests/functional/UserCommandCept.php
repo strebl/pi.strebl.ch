@@ -21,3 +21,5 @@ $I->runConsoleCommand("user:create", $parameter);
 $I->seeRecord('users', ['email' => 'manuel@strebl.ch']);
 
 $I->runConsoleCommand("user:delete", ['email' => 'manuel@strebl.ch']);
+
+$I->dontSeeRecord('users', ['email' => 'manuel@strebl.ch']);
