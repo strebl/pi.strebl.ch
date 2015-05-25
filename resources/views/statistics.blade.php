@@ -9,7 +9,7 @@
         </div>
         <div class="statistics">
             <div class="row">
-                <div class="col-md-5 col-md-offset-1">
+                <div class="col-md-4">
                     <div class="statistics__statistic">
                         <div class="pokes__total">
                             <div class="statistics__icon"><span class="fa fa-bell-o"></span></div>
@@ -17,30 +17,8 @@
                             <div class="statistics__title">Total Pokes</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="statistics__statistic">
-                        <div class="devices__total">
-                            <div class="statistics__icon"><span class="fa fa-hdd-o"></span></div>
-                            <div class="statistics__value">{{ $devices_total }}</div>
-                            <div class="statistics__title">Total Devices</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="statistics__statistic">
-                        <div class="pokes_graph">
-                            <div class="statistics__icon"><span class="fa fa-bar-chart"></span></div>
-                            <div class="statistics__title">Pokes Chart</div>
-                            <div class="statistics__value" id="pokes_graph"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-md-offset-1">
+                </div> <!-- Total Pokes Chart -->
+                <div class="col-md-5">
                     <div class="statistics__statistic">
                         <div class="network_graph">
                             <div class="row">
@@ -57,6 +35,26 @@
                                     <div class="statistics__title">Network Distribution</div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div> <!-- Network Distribution Chart -->
+                <div class="col-md-3">
+                    <div class="statistics__statistic">
+                        <div class="devices__total">
+                            <div class="statistics__icon"><span class="fa fa-hdd-o"></span></div>
+                            <div class="statistics__value">{{ $devices_total }}</div>
+                            <div class="statistics__title">Total Devices</div>
+                        </div>
+                    </div>
+                </div> <!-- Total Devices Chart -->
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="statistics__statistic">
+                        <div class="pokes_graph">
+                            <div class="statistics__icon"><span class="fa fa-bar-chart"></span></div>
+                            <div class="statistics__title">Pokes Chart</div>
+                            <div class="statistics__value" id="pokes_graph"></div>
                         </div>
                     </div>
                 </div>
