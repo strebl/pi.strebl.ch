@@ -44,30 +44,12 @@ new Morris.Bar({
     barColors: ['#3498db']
 });
 
-var data = [
-    {
-        value: 300,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
-    },
-    {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: 100,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    }
-]
+var data = pifinder.network_distribution;
 
 // Get the context of the canvas element we want to select
 var ctx = document.getElementById("network_chart").getContext("2d");
 var myNewChart = new Chart(ctx).Pie(data, {
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend network_chart__legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
     animationEasing : "easeOutQuart",
     animationSteps : 60,
     responsive: true

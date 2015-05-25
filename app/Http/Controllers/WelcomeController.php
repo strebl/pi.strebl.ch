@@ -78,7 +78,9 @@ class WelcomeController extends Controller
 
         $pokes = $statistics->allPokes()->toArray();
 
-        JavaScript::put(compact('pokes'));
+        $network_distribution = $statistics->networkDistribution()->toArray();
+
+        JavaScript::put(compact('pokes', 'network_distribution'));
 
         return view('statistics')->with(compact('pokes_total', 'devices_total'));
     }

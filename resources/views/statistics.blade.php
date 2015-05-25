@@ -39,6 +39,28 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="statistics__statistic">
+                        <div class="network_graph">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="statistics__icon"><span class="fa fa-share-alt"></span></div>
+                                </div>
+                                <div class="network_chart">
+                                    <div class="col-md-7">
+                                        <canvas class="network_chart__chart" id="network_chart"></canvas>
+                                    </div>
+                                    <div class="col-md-5" id="network_chart_legend"></div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="statistics__title">Network Distribution</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
