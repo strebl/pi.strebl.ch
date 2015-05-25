@@ -65,7 +65,7 @@ class Statistics
                 END
 		AS label, count(*) as value")
         )
-            ->groupBy('ip')
+            ->groupBy('label')
             ->orderBy('label')
             ->get();
 
@@ -82,8 +82,8 @@ class Statistics
 
     private function addColors($data)
     {
-        $colors = ['rgb(23,103,153)', 'rgb(47,135,176)', 'rgb(66,164,187)', 'rgb(91,192,196)', 'rgb(23,103,153)'];
-        $highlight_colors = ['#8BB3CC', '#97C3D7', '#ADDFE1', '#BBEAE3', '#8BB3CC'];
+        $colors = ['rgb(23,103,153)', 'rgb(47,135,176)', 'rgb(66,164,187)', 'rgb(91,192,196)'];
+        $highlight_colors = ['#8BB3CC', '#97C3D7', '#ADDFE1', '#BBEAE3'];
         foreach ($data as $i => $network) {
             $network['color'] = $colors[$i];
             $network['highlight'] = $highlight_colors[$i];
