@@ -29,5 +29,11 @@ elixir(function (mix) {
         'resources/js/app.js'
     ], null, './');
 
-    mix.version(['css/app.css', 'js/all.js']);
+    mix.scripts([
+        'bower_components/raphael/raphael-min.js',
+        'bower_components/morrisjs/morris.min.js',
+        'resources/js/charts.js'
+    ], 'public/js/charts.js', './');
+
+    mix.version(['css/app.css', 'js/all.js', 'js/charts.js']);
 });

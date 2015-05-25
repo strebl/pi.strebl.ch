@@ -142,6 +142,7 @@ return [
          */
         'Vinkla\Pusher\PusherServiceProvider',
         'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
+        'Laracasts\Utilities\JavaScript\JavascriptServiceProvider',
 
         /*
          * Application Service Providers...
