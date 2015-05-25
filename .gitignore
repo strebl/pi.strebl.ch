@@ -5,3 +5,4 @@
 .env
 /.idea
 tests/_output/*
+.php_cs.cache
