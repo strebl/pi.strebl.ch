@@ -7,6 +7,11 @@ use PiFinder\Poke;
 
 class Statistics
 {
+    /**
+     * Returns the count of all pokes.
+     *
+     * @return mixed
+     */
     public function totalPokes()
     {
         $base = 189771;
@@ -14,11 +19,21 @@ class Statistics
         return Poke::count() + $base;
     }
 
+    /**
+     * Returns the the count of all devices.
+     *
+     * @return mixed
+     */
     public function totalDevices()
     {
         return Poke::distinct()->count('mac');
     }
 
+    /**
+     * Returns all pokes.
+     *
+     * @return mixed
+     */
     public function allPokes()
     {
         return Poke::select(
