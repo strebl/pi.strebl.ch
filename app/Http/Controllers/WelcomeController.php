@@ -2,8 +2,10 @@
 
 namespace PiFinder\Http\Controllers;
 
+use DB;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Filesystem\Filesystem;
+use JavaScript;
 use PiFinder\Device;
 use PiFinder\Poke;
 use PiFinder\Services\MarkdownParser;
@@ -73,6 +75,15 @@ class WelcomeController extends Controller
         $pokes_total = Poke::count() + $base;
 
         $devices_total = Poke::distinct()->count('mac');
+
+        $pokes = Poke::select(
+            DB::raw('count(*) as pokes, date(created_at) as date')
+        )
+        ->groupBy('date')
+        ->get()
+        ->toArray();
+
+        JavaScript::put(compact('pokes'));
 
         return view('statistics')->with(compact('pokes_total', 'devices_total'));
     }

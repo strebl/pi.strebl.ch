@@ -28,6 +28,21 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="statistics__statistic">
+                        <div class="pokes_graph">
+                            <div class="statistics__icon"><span class="fa fa-bar-chart"></span></div>
+                            <div class="statistics__title">Pokes Chart</div>
+                            <div class="statistics__value" id="pokes_graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
+
+@section('javascript')
+    <script src={{ elixir("js/charts.js") }}></script>
+@append
