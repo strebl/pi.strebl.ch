@@ -2,12 +2,10 @@
 
 namespace PiFinder\Http\Controllers;
 
-use DB;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Filesystem\Filesystem;
 use JavaScript;
 use PiFinder\Device;
-use PiFinder\Poke;
 use PiFinder\Services\MarkdownParser;
 use PiFinder\Services\Statistics;
 

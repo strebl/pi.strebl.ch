@@ -5,8 +5,8 @@ namespace PiFinder\Services;
 use DB;
 use PiFinder\Poke;
 
-class Statistics {
-
+class Statistics
+{
     public function totalPokes()
     {
         $base = 189771;
@@ -58,19 +58,18 @@ class Statistics {
     }
 
     /**
-     * Creates the Regexp function for the SQLITE database
+     * Creates the Regexp function for the SQLITE database.
      */
     protected function createSqliteRegexpFunction()
     {
-        DB::connection()->getPdo()->sqliteCreateFunction("REGEXP", "preg_match", 2);
+        DB::connection()->getPdo()->sqliteCreateFunction('REGEXP', 'preg_match', 2);
     }
 
     private function addColors($data)
     {
         $colors = ['rgb(23,103,153)', 'rgb(47,135,176)', 'rgb(66,164,187)', 'rgb(91,192,196)'];
         $highlight_colors = ['#8BB3CC', '#97C3D7', '#ADDFE1', '#BBEAE3'];
-        foreach($data as $i => $network)
-        {
+        foreach ($data as $i => $network) {
             $network['color'] = $colors[$i];
             $network['highlight'] = $highlight_colors[$i];
         }
