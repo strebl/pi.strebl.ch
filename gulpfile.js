@@ -32,6 +32,7 @@ elixir(function (mix) {
     mix.scripts([
         'bower_components/raphael/raphael-min.js',
         'bower_components/morrisjs/morris.min.js',
+        'bower_components/Chart.js/Chart.min.js',
         'resources/js/charts.js'
     ], 'public/js/charts.js', './');
 
