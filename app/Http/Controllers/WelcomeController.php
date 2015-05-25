@@ -9,6 +9,7 @@ use JavaScript;
 use PiFinder\Device;
 use PiFinder\Poke;
 use PiFinder\Services\MarkdownParser;
+use PiFinder\Services\Statistics;
 
 class WelcomeController extends Controller
 {
@@ -69,19 +70,13 @@ class WelcomeController extends Controller
      *
      * @return Response
      */
-    public function statistics()
+    public function statistics(Statistics $statistics)
     {
-        $base = 189771;
-        $pokes_total = Poke::count() + $base;
+        $pokes_total = $statistics->totalPokes();
 
-        $devices_total = Poke::distinct()->count('mac');
+        $devices_total = $statistics->totalDevices();
 
-        $pokes = Poke::select(
-            DB::raw('count(*) as pokes, date(created_at) as date')
-        )
-        ->groupBy('date')
-        ->get()
-        ->toArray();
+        $pokes = $statistics->allPokes()->toArray();
 
         JavaScript::put(compact('pokes'));
 
