@@ -17,7 +17,7 @@ class DeviceController extends ApiController
 
     public function __construct(DeviceTransformer $transformer)
     {
-        $this->middleware('auth.basic', ['except' => 'poke']);
+        $this->middleware('auth.basic', ['except' => ['poke', 'show']]);
 
         $this->transformer = $transformer;
     }
