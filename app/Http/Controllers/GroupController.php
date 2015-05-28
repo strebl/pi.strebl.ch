@@ -4,7 +4,6 @@ namespace PiFinder\Http\Controllers;
 
 use PiFinder\Device;
 
-
 class GroupController extends Controller
 {
     /**
