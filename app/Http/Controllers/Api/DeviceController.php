@@ -47,6 +47,8 @@ class DeviceController extends ApiController
     {
         $device = Device::create($request->all());
 
+        $device->public = $request->get('public', 'auto');
+
         return $this->respondCreated($this->transformer->transform($device), $device->id);
     }
 
@@ -129,6 +131,8 @@ class DeviceController extends ApiController
         $device = Device::firstOrNew(['mac' => $request->mac]);
 
         $device->fill($request->all())->touch();
+
+        $device->public = $request->get('public', 'auto');
 
         event(new ServerWasPoked(array_add($device, 'server_time', Carbon::now()->toDateTimeString())));
 

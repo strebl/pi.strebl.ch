@@ -27,6 +27,8 @@ $I->seeResponseContainsJson([
         'ip'   => '192.168.1.123',
         'mac'  => '00:19:20:A1:B4:FC',
         'name' => 'Manuel',
+        'on_home_page' => 'auto',
+        'group'  => null,
     ],
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
@@ -35,4 +37,6 @@ $I->seeRecord('devices', [
     'ip'   => '192.168.1.123',
     'mac'  => '00:19:20:A1:B4:FC',
     'name' => 'Manuel',
+    'public' => 'auto',
+    'group'  => null,
 ]);

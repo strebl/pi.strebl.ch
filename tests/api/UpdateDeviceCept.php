@@ -30,6 +30,8 @@ $I->seeResponseContainsJson([
     'ip'   => '192.168.1.102',
     'mac'  => 'AA:BB:CC:DD:EE:FF',
     'name' => 'Updated Awesome Pi One',
+    'on_home_page' => 'auto',
+    'group'  => null,
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
 $I->seeResponseJsonMatchesXpath('//data//last_contact');
@@ -37,6 +39,8 @@ $I->canSeeRecord('devices', [
     'ip'   => '192.168.1.102',
     'mac'  => 'AA:BB:CC:DD:EE:FF',
     'name' => 'Updated Awesome Pi One',
+    'public' => 'auto',
+    'group'  => null,
 ]);
 $updatedDevice = $I->grabRecord('devices', ['ip' => '192.168.1.102']);
 $I->cantSeeRecord('devices', [

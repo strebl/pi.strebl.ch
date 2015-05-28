@@ -27,6 +27,8 @@ class StoreComputerRequest extends Request
             'ip'   => 'required|ip',
             'mac'  => 'required|mac',
             'name' => 'required',
+            'group' => 'alpha_dash|max:30',
+            'public' => 'in:true,false,auto',
         ];
     }
 
