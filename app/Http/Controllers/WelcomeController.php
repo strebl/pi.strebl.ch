@@ -37,7 +37,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $devices = Device::all();
+        $devices = Device::onHomePage()->get();
 
         return view('overview')->with(compact('devices'));
     }

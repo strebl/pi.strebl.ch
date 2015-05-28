@@ -14,3 +14,5 @@ Route::group(['prefix' => 'api/v1', 'namespace' => 'Api'], function () {
         'uses' => 'DeviceController@poke',
     ]);
 });
+
+Route::get('/@{group}', 'GroupController@show');

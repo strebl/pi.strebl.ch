@@ -1,5 +1,10 @@
 <tr>
-    <th colspan="4" class="table__title">Devices</th>
+    <th colspan="4" class="table__title">
+        @if(isset($group))
+            {{ $group }}
+        @endif
+        Devices
+    </th>
 </tr>
 <tr>
     <th>Name</th>
