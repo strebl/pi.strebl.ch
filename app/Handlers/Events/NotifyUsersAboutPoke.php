@@ -33,6 +33,15 @@ class NotifyUsersAboutPoke
      */
     public function handle(ServerWasPoked $event)
     {
-        $this->pusher->trigger(env('PUSHER_CHANNEL', 'pi-finder'), 'ServerWasPoked', ['device' => $event->getDevice()->toArray()]);
+        $channel = env('PUSHER_CHANNEL', 'pi-finder');
+        $device = $event->getDevice();
+
+        if ($device->isPublic()) {
+            $this->pusher->trigger($channel, 'ServerWasPoked', ['device' => $device->toArray()]);
+        } else {
+            $channel = $channel.'-'.$device->group;
+
+            $this->pusher->trigger($channel, 'ServerWasPoked', ['device' => $device->toArray()]);
+        }
     }
 }

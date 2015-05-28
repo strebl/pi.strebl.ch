@@ -16,4 +16,9 @@ class Device extends Model
                                ->whereNull('group');
                      });
     }
+
+    public function isPublic()
+    {
+        return $this->public == 'true' || ($this->public == 'auto' && $this->group === null);
+    }
 }
