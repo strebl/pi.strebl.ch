@@ -24,19 +24,19 @@ $I->seeHttpHeader('Location', 'http://localhost/api/v1/devices/1');
 $I->seeResponseIsJson();
 $I->seeResponseContainsJson([
     'data' => [
-        'ip'   => '192.168.1.123',
-        'mac'  => '00:19:20:A1:B4:FC',
-        'name' => 'Manuel',
+        'ip'           => '192.168.1.123',
+        'mac'          => '00:19:20:A1:B4:FC',
+        'name'         => 'Manuel',
         'on_home_page' => 'auto',
-        'group'  => null,
+        'group'        => null,
     ],
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
 $I->seeResponseJsonMatchesXpath('//data//last_contact');
 $I->seeRecord('devices', [
-    'ip'   => '192.168.1.123',
-    'mac'  => '00:19:20:A1:B4:FC',
-    'name' => 'Manuel',
+    'ip'     => '192.168.1.123',
+    'mac'    => '00:19:20:A1:B4:FC',
+    'name'   => 'Manuel',
     'public' => 'auto',
     'group'  => null,
 ]);

@@ -27,18 +27,18 @@ $I->sendPATCH('devices/1', [
 $I->seeResponseCodeIs(200);
 $I->seeResponseIsJson();
 $I->seeResponseContainsJson([
-    'ip'   => '192.168.1.102',
-    'mac'  => 'AA:BB:CC:DD:EE:FF',
-    'name' => 'Updated Awesome Pi One',
+    'ip'           => '192.168.1.102',
+    'mac'          => 'AA:BB:CC:DD:EE:FF',
+    'name'         => 'Updated Awesome Pi One',
     'on_home_page' => 'auto',
-    'group'  => null,
+    'group'        => null,
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
 $I->seeResponseJsonMatchesXpath('//data//last_contact');
 $I->canSeeRecord('devices', [
-    'ip'   => '192.168.1.102',
-    'mac'  => 'AA:BB:CC:DD:EE:FF',
-    'name' => 'Updated Awesome Pi One',
+    'ip'     => '192.168.1.102',
+    'mac'    => 'AA:BB:CC:DD:EE:FF',
+    'name'   => 'Updated Awesome Pi One',
     'public' => 'auto',
     'group'  => null,
 ]);

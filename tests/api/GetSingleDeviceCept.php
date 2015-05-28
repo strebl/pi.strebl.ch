@@ -24,22 +24,22 @@ $I->seeResponseCodeIs(200);
 $I->seeResponseIsJson();
 $I->seeResponseContainsJson([
     'data' => [
-        'ip'   => '192.168.1.101',
-        'mac'  => '11:22:33:44:55:66',
-        'name' => 'Awesome Pi One',
+        'ip'           => '192.168.1.101',
+        'mac'          => '11:22:33:44:55:66',
+        'name'         => 'Awesome Pi One',
         'on_home_page' => 'auto',
-        'group'  => null,
+        'group'        => null,
     ],
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
 $I->seeResponseJsonMatchesXpath('//data//last_contact');
 $I->dontSeeResponseContainsJson([
     'data' => [
-        'ip'   => '192.168.1.102',
-        'mac'  => 'AA:BB:CC:DD:EE:FF',
-        'name' => 'Awesome Pi Two',
+        'ip'           => '192.168.1.102',
+        'mac'          => 'AA:BB:CC:DD:EE:FF',
+        'name'         => 'Awesome Pi Two',
         'on_home_page' => 'auto',
-        'group'  => null,
+        'group'        => null,
     ],
 ]);
 

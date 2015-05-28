@@ -16,11 +16,11 @@ $I->seeResponseIsJson();
 
 $I->seeResponseContainsJson([
     'data' => [
-        'ip'     => '192.168.1.123',
-        'mac'    => '00:19:20:A1:B4:FC',
-        'name'   => 'Manuel',
+        'ip'           => '192.168.1.123',
+        'mac'          => '00:19:20:A1:B4:FC',
+        'name'         => 'Manuel',
         'on_home_page' => 'false',
-        'group'  => 'strebl',
+        'group'        => 'strebl',
     ],
 ]);
 $I->seeResponseJsonMatchesXpath('//data//device_added');
