@@ -130,10 +130,12 @@ class DeviceController extends ApiController
     {
         $device = Device::firstOrNew(['mac' => $request->mac]);
 
-        $device->fill($request->all())->touch();
+        $device->fill($request->all());
 
         $device->group = $request->get('group', null);
         $device->public = $request->get('public', 'auto');
+
+        $device->touch();
 
         event(new ServerWasPoked(array_add($device, 'server_time', Carbon::now()->toDateTimeString())));
 
