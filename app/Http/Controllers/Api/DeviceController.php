@@ -132,6 +132,7 @@ class DeviceController extends ApiController
 
         $device->fill($request->all())->touch();
 
+        $device->group = $request->get('group', null);
         $device->public = $request->get('public', 'auto');
 
         event(new ServerWasPoked(array_add($device, 'server_time', Carbon::now()->toDateTimeString())));
