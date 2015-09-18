@@ -7,7 +7,7 @@
 	"require": {
 		"laravel/framework": "5.0.*",
 		"erusev/parsedown-extra": "0.7.*",
-		"vinkla/pusher": "~1.0",
+		"vinkla/pusher": "~2.0",
 		"bugsnag/bugsnag-laravel": "dev-master@dev",
 		"laracasts/utilities": "^2.0",
 		"doctrine/dbal": "^2.5"
