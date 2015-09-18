@@ -5,7 +5,7 @@ $I->wantTo('create and delete a user');
 $user = [
     'email' => 'manuel@strebl.ch',
     'password' => 'password',
-    'password_confirmation' => 'password'
+    'password_confirmation' => 'password',
 ];
 $I->dontSeeRecord('users', ['email' => 'manuel@strebl.ch']);
 $parameter = [
