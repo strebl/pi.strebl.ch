@@ -34,12 +34,17 @@ It should work on any Unix based system. However, it's only tested on Raspbian a
 If you have problems, just create an [Issue](https://github.com/strebl/pi-finder/issues) or even better a [Pull Request](https://github.com/strebl/pi-finder/pulls).
 
 ## Installation
-**You need to run all these commands on your Rasberry Pi. Therefore you need to get it's IP address the the traditional way.
-Hopefully the last time :)**
+**You need to run all these commands on your Rasberry Pi.**
 
 #### 1. Run the installer
 ```bash
-$ wget http://bit.ly/pi-finder_installer -O - | sudo sh
+$ wget http://bit.ly/pi-finder_installer -O - | sudo bash
+```
+
+##### Run this command only if the first failed!
+If you haven't `wget` installed, try the curl command:
+```bash
+$ curl -fsSL http://bit.ly/pi-finder_installer | sudo bash
 ```
 
 #### 2. Configure
@@ -51,14 +56,14 @@ $ sudo nano /usr/lib/node_modules/pi-finder/config.js
 ...and change the name from `My Awesome Pi` to a name you'll recognise.
 ```javascript
 module.exports = {
-	// ...
-	name: "Manuel's Pi",
-	// ...
+    // ...
+    name: "Manuel's Pi",
+    // ...
 }
 ```
 
 #### 3. Start Pi Finder
-You can restart your Pi or start the pi-finder manually.
+Add the pi finder to the start up
 ```bash
 $ sudo service pi-finder start
 ```
@@ -69,10 +74,8 @@ To test the configuration, restart your Pi and check the [Pi Finder](https://pi.
 $ sudo reboot
 ```
 
-## Management
-<div class="alert alert-info">
-	<strong>You don't need to run these commands!</strong> The Pi Finder starts automatically on system start up.
-</div>
+## Usage Linux
+
 #### Start Pi Finder
 ```bash
 $ sudo service pi-finder start 
@@ -92,3 +95,28 @@ $ sudo service pi-finder restart
 ```bash
 $ sudo service pi-finder status 
 ```
+
+
+## Usage OS X
+
+#### Start Pi Finder
+```bash
+$ sudo launchctl load /Library/LaunchDaemons/ch.strebl.pi-finder.plist
+```
+
+#### Stop Pi Finder
+```bash
+$ sudo launchctl unload /Library/LaunchDaemons/ch.strebl.pi-finder.plist
+```
+
+#### Stop Pi Finder
+```bash
+$ sudo launchctl unload /Library/LaunchDaemons/ch.strebl.pi-finder.plist
+$ sudo launchctl load /Library/LaunchDaemons/ch.strebl.pi-finder.plist
+```
+
+#### Stop Pi Finder
+```bash
+$ sudo launchctl list | grep ch.strebl.pi-finder 
+```
+If you see any output, the pi finder is running
