@@ -19,21 +19,23 @@ elixir(function (mix) {
         'respond/dest/respond.min.js'
     ], 'public/js/ie.min.js', 'bower_components');
 
+    mix.browserify('app.js');
+
     mix.scripts([
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/sweetalert/lib/sweet-alert.min.js',
         'bower_components/moment/min/moment.min.js',
         'bower_components/pusher/dist/pusher.min.js',
-        'resources/js/vendor/flat-ui-pro.min.js',
-        'resources/js/vendor/prism.js',
-        'resources/js/app.js'
+        'resources/assets/js/vendor/flat-ui-pro.min.js',
+        'resources/assets/js/vendor/prism.js',
+        'resources/assets/js/app.js'
     ], null, './');
 
     mix.scripts([
         'bower_components/raphael/raphael-min.js',
         'bower_components/morrisjs/morris.min.js',
         'bower_components/Chart.js/Chart.min.js',
-        'resources/js/charts.js'
+        'resources/assets/js/charts.js'
     ], 'public/js/charts.js', './');
 
     mix.version(['css/app.css', 'js/all.js', 'js/charts.js']);
