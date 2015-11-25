@@ -7595,7 +7595,7 @@ body.stop-scrolling {
       .sweet-alert button.cancel:hover {
         background-color: #c8c8c8; }
       .sweet-alert button.cancel:active {
-        background-color: #b6b6b6; }
+        background-color: #b7b7b7; }
       .sweet-alert button.cancel:focus {
         box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.04706) 0px 0px 0px 1px inset !important; }
     .sweet-alert button::-moz-focus-inner {
