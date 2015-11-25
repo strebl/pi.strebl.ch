@@ -36,6 +36,7 @@
     @else
         <meta name="pusher-channel" content="{{ env('PUSHER_CHANNEL', 'pi-finder') }}" />
     @endif
+    <meta name="pusher-key" content="{{ env('PUSHER_KEY') }}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
