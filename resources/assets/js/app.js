@@ -1,3 +1,14 @@
+global.$      = require('jquery');
+global.jQuery = require('jquery');
+var moment    = require('moment');
+require('sweetalert');
+require('pusher-js');
+require('prismjs');
+require('prismjs/components/prism-markup');
+require('prismjs/components/prism-clike');
+require('prismjs/components/prism-javascript');
+require('prismjs/components/prism-bash');
+
 $(document).ready(function(){
 
     moment.locale('en', {
