@@ -6,7 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="tile --shadow js-no-devices">
                     <h2>Nope!</h2>
-                    <p class="lead">No Pi poked me yet.</p>
+                    <p class="lead">No Pi poked me recently.</p>
                 </div>
                 <div class="table-container">
                     <table class="table hidden" id="device-table">
