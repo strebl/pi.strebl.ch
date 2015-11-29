@@ -19,7 +19,8 @@ class DeviceObserver
 
     /**
      * DeviceObserver constructor.
-     * @param PusherManager $pusher
+     *
+     * @param PusherManager     $pusher
      * @param DeviceTransformer $transformer
      */
     public function __construct(PusherManager $pusher, DeviceTransformer $transformer)

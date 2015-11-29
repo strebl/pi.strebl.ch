@@ -69,8 +69,8 @@ $I->dontSeeResponseContainsJson([
 ]);
 $I->seeResponseContainsJson([
     'data' => [
-        'ip'         => '192.168.1.103',
-        'name'       => 'Auto Pi without group',
+        'ip'           => '192.168.1.103',
+        'name'         => 'Auto Pi without group',
         'on_home_page' => 'auto',
         'group'        => null,
         'device_added' => \Carbon\Carbon::parse($piTwo->created_at)->toIso8601String(),
@@ -80,8 +80,8 @@ $I->seeResponseContainsJson([
 
 $I->dontSeeResponseContainsJson([
     'data' => [
-        'ip'         => '192.168.1.104',
-        'name'       => 'Auto Pi with group',
+        'ip'           => '192.168.1.104',
+        'name'         => 'Auto Pi with group',
         'on_home_page' => 'auto',
         'group'        => 'my-group',
         'device_added' => \Carbon\Carbon::parse($piTwo->created_at)->toIso8601String(),

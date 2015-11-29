@@ -26,6 +26,7 @@ class DeviceController extends ApiController
      * Display a listing of the resource.
      *
      * @param null $group
+     *
      * @return Response
      */
     public function index($group = null)
