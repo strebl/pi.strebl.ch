@@ -24,7 +24,6 @@ $I->seeResponseIsJson();
 $I->seeResponseContainsJson([
     'data' => [
         'ip'           => '192.168.1.100',
-        'mac'          => '00:19:20:A1:B4:FC',
         'name'         => 'Manuel',
         'on_home_page' => 'auto',
         'group'        => null,

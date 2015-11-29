@@ -28,7 +28,6 @@ $I->seeResponseCodeIs(200);
 $I->seeResponseIsJson();
 $I->seeResponseContainsJson([
     'ip'           => '192.168.1.102',
-    'mac'          => 'AA:BB:CC:DD:EE:FF',
     'name'         => 'Updated Awesome Pi One',
     'on_home_page' => 'auto',
     'group'        => null,
