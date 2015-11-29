@@ -17,7 +17,7 @@ class DeviceController extends ApiController
 
     public function __construct(DeviceTransformer $transformer)
     {
-        $this->middleware('auth.basic', ['except' => ['poke', 'show']]);
+        $this->middleware('auth.basic', ['except' => ['index', 'poke', 'show']]);
 
         $this->transformer = $transformer;
     }
@@ -25,14 +25,17 @@ class DeviceController extends ApiController
     /**
      * Display a listing of the resource.
      *
+     * @param null $group
+     *
      * @return Response
      */
-    public function index()
+    public function index($group = null)
     {
-        $devices = Device::all();
+        $devices = $group ? Device::where('group', $group)->get() : Device::onHomePage()->get();
 
         return $this->respond([
-            'data' => $this->transformer->transformCollection($devices->all()),
+            'data'        => $this->transformer->transformCollection($devices->all()),
+            'server_time' => Carbon::now()->toIso8601String(),
         ]);
     }
 

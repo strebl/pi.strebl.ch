@@ -30,12 +30,12 @@
     <meta name="msapplication-square150x150logo" content="/img/favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="/img/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/img/favicon/mstile-310x310.png" />
-    <meta name="server-time" content="{{ \Carbon\Carbon::now() }}" />
     @if(isset($group))
         <meta name="pusher-channel" content="{{ env('PUSHER_CHANNEL', 'pi-finder') }}-{{ $group }}" />
     @else
         <meta name="pusher-channel" content="{{ env('PUSHER_CHANNEL', 'pi-finder') }}" />
     @endif
+    <meta name="pusher-key" content="{{ env('PUSHER_KEY') }}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -64,6 +64,8 @@
 
 @yield('content')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.17/vue-resource.js"></script>
 <script src={{ elixir("js/all.js") }}></script>
 @yield('javascript')
 

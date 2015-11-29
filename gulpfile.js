@@ -12,28 +12,25 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function (mix) {
-    mix.rubySass('app.scss');
+    mix.sass('app.scss');
 
     mix.scripts([
         'html5shiv/dist/html5shiv.min.js',
-        'respond/dest/respond.min.js'
-    ], 'public/js/ie.min.js', 'bower_components');
+        'respond.js/dest/respond.min.js'
+    ], 'public/js/ie.min.js', 'node_modules');
+
+    mix.browserify('app.js');
 
     mix.scripts([
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/sweetalert/lib/sweet-alert.min.js',
-        'bower_components/moment/min/moment.min.js',
-        'bower_components/pusher/dist/pusher.min.js',
-        'resources/js/vendor/flat-ui-pro.min.js',
-        'resources/js/vendor/prism.js',
-        'resources/js/app.js'
+        'public/js/app.js',
+        'resources/assets/js/vendor/flat-ui-pro.min.js'
     ], null, './');
 
     mix.scripts([
-        'bower_components/raphael/raphael-min.js',
-        'bower_components/morrisjs/morris.min.js',
-        'bower_components/Chart.js/Chart.min.js',
-        'resources/js/charts.js'
+        'node_modules/raphael/raphael-min.js',
+        'node_modules/morris.js/morris.min.js',
+        'node_modules/chart.js/Chart.min.js',
+        'resources/assets/js/charts.js'
     ], 'public/js/charts.js', './');
 
     mix.version(['css/app.css', 'js/all.js', 'js/charts.js']);

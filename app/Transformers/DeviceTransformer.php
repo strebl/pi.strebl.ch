@@ -7,8 +7,8 @@ class DeviceTransformer extends Transformer
     public function transform($device)
     {
         return [
+            'id'            => $device['id'],
             'ip'            => $device['ip'],
-            'mac'           => $device['mac'],
             'name'          => $device['name'],
             'group'         => $device['group'],
             'on_home_page'  => $device['public'],
