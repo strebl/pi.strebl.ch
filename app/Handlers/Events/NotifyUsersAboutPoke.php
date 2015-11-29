@@ -23,7 +23,7 @@ class NotifyUsersAboutPoke
     /**
      * Create the event handler.
      *
-     * @param PusherManager $pusher
+     * @param PusherManager     $pusher
      * @param DeviceTransformer $transformer
      */
     public function __construct(PusherManager $pusher, DeviceTransformer $transformer)
