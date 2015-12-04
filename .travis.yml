@@ -7,6 +7,10 @@ php:
   - 7.0
   - hhvm
 
+  matrix:
+    allow_failures:
+        - php: hhvm
+
 env:
   - APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:" APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""
 
