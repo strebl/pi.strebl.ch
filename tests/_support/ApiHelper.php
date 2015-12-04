@@ -9,12 +9,18 @@ use Carbon\Carbon;
 
 class ApiHelper extends \Codeception\Module
 {
-    public function _before()
+    
+    private $artisan;
+
+    public function _before(\Codeception\Testcase $test)
     {
-        $this->debug('MIGRATING BEFORE RUN');
-        $this->getModule('Laravel5')
-             ->grabService('PiFinder\Console\Kernel')
-             ->call('migrate');
+        $this->artisan()->call('migrate');
+    }
+
+    private function artisan()
+    {
+        return $this->getModule('Laravel5')
+            ->grabService('PiFinder\Console\Kernel');
     }
 
     public function carbonize($date)

@@ -9,7 +9,7 @@ class FunctionalHelper extends \Codeception\Module
 {
     private $artisan;
 
-    public function _beforeStep()
+    public function _beforeStep(\Codeception\Step $step)
     {
         $this->artisan()->call('migrate');
     }

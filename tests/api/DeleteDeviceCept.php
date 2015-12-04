@@ -17,7 +17,6 @@ $piOne = $I->haveRecord('devices', [
 
 $I->sendDELETE('devices/1');
 $I->seeResponseCodeIs(204);
-$I->seeResponseIsJson();
 $I->cantSeeRecord('devices', ['ip' => '192.168.1.101']);
 
 $I->sendDELETE('devices/1000');
