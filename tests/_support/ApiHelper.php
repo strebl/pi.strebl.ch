@@ -9,7 +9,6 @@ use Carbon\Carbon;
 
 class ApiHelper extends \Codeception\Module
 {
-    
     private $artisan;
 
     public function _before(\Codeception\Testcase $test)
