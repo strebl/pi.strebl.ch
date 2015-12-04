@@ -8,7 +8,7 @@ php:
   - hhvm
 
 env:
-  - APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:"
+  - APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:" APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""
 
 sudo: false
 
