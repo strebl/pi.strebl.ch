@@ -6,7 +6,7 @@
 [![GitHub license](https://img.shields.io/github/license/strebl/pi.strebl.ch.svg?style=flat-square)](https://github.com/strebl/pi.strebl.ch/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/strebl/pi.strebl.ch.svg?style=flat-square)](https://github.com/strebl/pi.strebl.ch/releases)
 
-[**pi.strebl.ch**](https://pi.strebl.ch) is the free backend service for the [**Pi Finder**](https://github.com/strebl/pi-finder#pi-finder-).  
+[**pi.strebl.ch**](https://pi.strebl.ch) is the free backend service for the [**Pi Finder**](https://github.com/strebl/pi-finder#pi-finder).  
 The Pi Finder lets you find your Raspberry Pi or any other unix based device in your network.  
 Read the [Introduction](https://pi.strebl.ch/getting-started#Introduction) for more information.
 
