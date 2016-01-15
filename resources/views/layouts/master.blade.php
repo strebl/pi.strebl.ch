@@ -49,7 +49,7 @@
 
 <div class="app-header">
     <a href="/getting-started" class="app-header__nav">Getting Started</a>
-    <!-- <a href="/getting-started" class="app-header__nav --right">Introduction</a> -->
+    <a href="https://github.com/strebl/pi.strebl.ch" class="app-header__nav --right">GitHub</a>
     <div class="container">
         <div class="app-header__icon">
             <a href="/"><span class="icon-raspberrypi"></span></a>
