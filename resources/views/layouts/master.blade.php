@@ -50,6 +50,7 @@
 <div class="app-header">
     <a href="/getting-started" class="app-header__nav">Getting Started</a>
     <a href="https://github.com/strebl/pi.strebl.ch" class="app-header__nav --right">GitHub</a>
+    <a href="https://twitter.com/pifinder" class="app-header__nav --right">Twitter</a>
     <div class="container">
         <div class="app-header__icon">
             <a href="/"><span class="icon-raspberrypi"></span></a>
