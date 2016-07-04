@@ -54,7 +54,6 @@ class WelcomeController extends Controller
     public function gettingStarted(MarkdownParser $markdown, Cache $cache, Filesystem $file)
     {
         $gettingStarted = $cache->remember('getting-started', 5, function () use ($markdown, $file) {
-
             $gettingStarted = $file->get(base_path('resources/getting-started/readme.md'));
 
             return $markdown->parse($gettingStarted);
