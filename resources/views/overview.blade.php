@@ -4,7 +4,7 @@
     <div id="app" class="container">
         @if(request()->getHost() == 'pi.strebl.ch')
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="alert alert-danger" style="color: #a94442;">
                         <p>
                             <h4>Please Update your Configuration!</h4>
