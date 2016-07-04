@@ -69,7 +69,7 @@ $ sudo service pi-finder start
 ```
 
 #### 4. Reboot (optional)
-To test the configuration, restart your Pi and check the [Pi Finder](https://pi.strebl.ch)!
+To test the configuration, restart your Pi and check the [Pi Finder](https://pi-finder.xyz)!
 ```bash
 $ sudo reboot
 ```
