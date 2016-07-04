@@ -15,7 +15,7 @@ class CreatePokesTable extends Migration
         Schema::create('pokes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ip', 15);
-            $table->string('mac', 7);
+            $table->string('mac', 17);
             $table->timestamps();
         });
     }
