@@ -326,7 +326,7 @@ trait UnitTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Checks if file exists
-     *  
+     *
      * @param string $filename
      * @param string $message
      *
@@ -341,7 +341,7 @@ trait UnitTesterActions
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Checks if file doesn't exist
-     *  
+     *
      * @param string $filename
      * @param string $message
      *
