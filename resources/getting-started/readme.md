@@ -101,6 +101,30 @@ $ sudo service pi-finder status
 
 #### Start Pi Finder
 ```bash
+$ sudo launchctl load /Library/LaunchDaemons/xyz.pi-finder.plist
+```
+
+#### Stop Pi Finder
+```bash
+$ sudo launchctl unload /Library/LaunchDaemons/xyz.pi-finder.plist
+```
+
+#### Stop Pi Finder
+```bash
+$ sudo launchctl unload /Library/LaunchDaemons/xyz.pi-finder.plist
+$ sudo launchctl load /Library/LaunchDaemons/xyz.pi-finder.plist
+```
+
+#### Status of the Pi Finder
+```bash
+$ sudo launchctl list | grep xyz.pi-finder 
+```
+If you see any output, the pi finder is running
+
+### If you are using an old Pi Finder installation on OS X
+
+#### Start Pi Finder
+```bash
 $ sudo launchctl load /Library/LaunchDaemons/ch.strebl.pi-finder.plist
 ```
 
