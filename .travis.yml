@@ -38,6 +38,6 @@ after_failure:
 notifications:
   webhooks:
     urls:
-      secure: ExavtP5SCg08UQGPbmErLApMnzgn2ZEkI87/OoFIdSBYTOiz0VJjJ85h8Im0EOC3+8RlbLSnjCzTeZbaeN/Atxl94ZmIpA/X5FF4hNGMXsi0Ynt4wYfyCK+IHT5iWzS+H3WWDQcUMogRYMUYa02BX688VtzQ4eRKETTO+SzV+yo=
+      secure: "D5Hr3KOzkmiH1F5wcuzJec9T2hiWN+8mXh+NFudhMfPeAxP2F/2w9y/r1kGp/2Ikz4Zn3DupbODz6UoYfh6UkxtrCJQNkch6j/OqAfrROT7cmOvMcQbO67zgZEw4T9xwBCYTpBIujoq8Nzg/NoAbfMCVHw6a4jNZhLD4crLMxr4="
     on_success: always
     on_failure: never
