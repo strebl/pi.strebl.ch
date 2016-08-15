@@ -18,6 +18,7 @@ class Kernel extends HttpKernel
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
         'PiFinder\Http\Middleware\VerifyCsrfToken',
+        \TomSchlick\ServerPush\Http2ServerPushMiddleware::class,
     ];
 
     /**

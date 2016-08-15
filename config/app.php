@@ -143,6 +143,7 @@ return [
         Vinkla\Pusher\PusherServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        TomSchlick\ServerPush\ServiceProvider::class,
 
         /*
          * Application Service Providers...
