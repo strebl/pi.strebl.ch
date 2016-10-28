@@ -21,8 +21,10 @@ install:
   - php artisan migrate
 
 script:
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-  - vendor/bin/codecept run --coverage --coverage-xml
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then vendor/bin/phpunit; fi;'
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.1" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi;'
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then vendor/bin/codecept run; fi;'
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.1" ]; then vendor/bin/codecept run --coverage --coverage-xml; fi;'
 
 after_script:
   - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ] && [ "$TRAVIS_PHP_VERSION" != "7.0" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
