@@ -2,9 +2,9 @@
 
 namespace PiFinder\Services;
 
+use Illuminate\Foundation\Auth\RegistersUsers;
 use PiFinder\User;
 use Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class Registrar
 {
