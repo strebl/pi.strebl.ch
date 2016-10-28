@@ -3,7 +3,7 @@
 namespace PiFinder\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Auth\Registrar;
+use PiFinder\Services\Registrar;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

@@ -53,8 +53,8 @@ $I->seeResponseContainsJson([
         'name'         => 'Public Pi',
         'on_home_page' => 'true',
         'group'        => null,
-        'device_added' => \Carbon\Carbon::parse($piOne->created_at)->toIso8601String(),
-        'last_contact' => \Carbon\Carbon::parse($piOne->updated_at)->toIso8601String(),
+        'device_added' => \Carbon\Carbon::parse($piOne['created_at'])->toIso8601String(),
+        'last_contact' => \Carbon\Carbon::parse($piOne['updated_at'])->toIso8601String(),
     ],
 ]);
 $I->dontSeeResponseContainsJson([
@@ -63,8 +63,8 @@ $I->dontSeeResponseContainsJson([
         'name'         => 'Private Pi',
         'on_home_page' => 'false',
         'group'        => null,
-        'device_added' => \Carbon\Carbon::parse($piTwo->created_at)->toIso8601String(),
-        'last_contact' => \Carbon\Carbon::parse($piTwo->updated_at)->toIso8601String(),
+        'device_added' => \Carbon\Carbon::parse($piTwo['created_at'])->toIso8601String(),
+        'last_contact' => \Carbon\Carbon::parse($piTwo['updated_at'])->toIso8601String(),
     ],
 ]);
 $I->seeResponseContainsJson([
@@ -73,8 +73,8 @@ $I->seeResponseContainsJson([
         'name'         => 'Auto Pi without group',
         'on_home_page' => 'auto',
         'group'        => null,
-        'device_added' => \Carbon\Carbon::parse($piTwo->created_at)->toIso8601String(),
-        'last_contact' => \Carbon\Carbon::parse($piTwo->updated_at)->toIso8601String(),
+        'device_added' => \Carbon\Carbon::parse($piTwo['created_at'])->toIso8601String(),
+        'last_contact' => \Carbon\Carbon::parse($piTwo['updated_at'])->toIso8601String(),
     ],
 ]);
 
@@ -84,8 +84,8 @@ $I->dontSeeResponseContainsJson([
         'name'         => 'Auto Pi with group',
         'on_home_page' => 'auto',
         'group'        => 'my-group',
-        'device_added' => \Carbon\Carbon::parse($piTwo->created_at)->toIso8601String(),
-        'last_contact' => \Carbon\Carbon::parse($piTwo->updated_at)->toIso8601String(),
+        'device_added' => \Carbon\Carbon::parse($piTwo['created_at'])->toIso8601String(),
+        'last_contact' => \Carbon\Carbon::parse($piTwo['updated_at'])->toIso8601String(),
     ],
 ]);
 
