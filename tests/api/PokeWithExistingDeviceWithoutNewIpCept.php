@@ -4,7 +4,9 @@ $I = new ApiTester($scenario);
 $I->wantTo('poke the server with an existing device and a unchanged IP');
 
 $initial_created_at = \Carbon\Carbon::now()->subHour();
+$initial_created_at->second($initial_created_at->second);
 $initial_updated_at = \Carbon\Carbon::now()->subHour();
+$initial_updated_at->second($initial_updated_at->second);
 
 $I->haveRecord('devices', [
     'ip'         => '192.168.1.123',
@@ -44,7 +46,9 @@ $I->seeRecord('pokes', [
 ]);
 $device = $I->grabRecord('devices', ['mac' => '00:19:20:A1:B4:FC']);
 $created_at_after_poke = $I->carbonize($device['created_at']);
+$created_at_after_poke->second($created_at_after_poke->second);
 $updated_at_after_poke = $I->carbonize($device['updated_at']);
+$updated_at_after_poke->second($updated_at_after_poke->second);
 
 $I->assertTrue($updated_at_after_poke->gt($initial_updated_at),
     'The updated_at timestamp after the poke is greater than the initial updated_at timestamp');

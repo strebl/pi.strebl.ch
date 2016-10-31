@@ -8,7 +8,9 @@ $user = $I->haveAnAccount();
 $I->amHttpAuthenticated($user['email'], $user['password']);
 
 $created_at = \Carbon\Carbon::now()->subHour();
+$created_at->second($created_at->second);
 $updated_at = \Carbon\Carbon::now()->subHour();
+$updated_at->second($updated_at->second);
 
 $I->haveRecord('devices', [
     'ip'         => '192.168.1.101',
