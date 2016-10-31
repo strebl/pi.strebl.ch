@@ -9,7 +9,7 @@ $I->sendPOST('devices/poke', [
     'name' => 'Manuel',
 ]);
 $I->seeResponseCodeIs(200);
-$I->seeHttpHeader('Location', 'http://localhost/api/v1/devices/1');
+$I->seeHttpHeader('Location', 'http://pi-finder.xyz/api/v1/devices/1');
 $I->seeResponseIsJson();
 $I->seeResponseContainsJson([
     'data' => [

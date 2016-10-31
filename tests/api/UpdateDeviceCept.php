@@ -8,7 +8,9 @@ $user = $I->haveAnAccount();
 $I->amHttpAuthenticated($user['email'], $user['password']);
 
 $created_at = \Carbon\Carbon::now()->subHour();
+$created_at->second($created_at->second);
 $updated_at = \Carbon\Carbon::now()->subHour();
+$updated_at->second($updated_at->second);
 
 $I->haveRecord('devices', [
     'ip'         => '192.168.1.101',
@@ -47,8 +49,8 @@ $I->cantSeeRecord('devices', [
     'mac'  => '11:22:33:44:55:66',
     'name' => 'Awesome Pi One',
 ]);
-$updated_created_at_timestamp = $I->carbonize($updatedDevice->created_at);
-$updated_updated_at_timestamp = $I->carbonize($updatedDevice->updated_at);
+$updated_created_at_timestamp = $I->carbonize($updatedDevice['created_at']);
+$updated_updated_at_timestamp = $I->carbonize($updatedDevice['updated_at']);
 $I->assertTrue($updated_created_at_timestamp->eq($created_at),
     'Updated created_at timestamp is equal to the initial created_at timestamp');
 $I->assertTrue($updated_updated_at_timestamp->gt($updated_at),

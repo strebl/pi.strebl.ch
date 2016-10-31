@@ -2,12 +2,14 @@
 
 namespace PiFinder\Services;
 
-use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use PiFinder\User;
 use Validator;
 
-class Registrar implements RegistrarContract
+class Registrar
 {
+    use RegistersUsers;
+
     /**
      * Get a validator for an incoming registration request.
      *

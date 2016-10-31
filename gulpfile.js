@@ -19,7 +19,7 @@ elixir(function (mix) {
         'respond.js/dest/respond.min.js'
     ], 'public/js/ie.min.js', 'node_modules');
 
-    mix.browserify('app.js');
+    mix.webpack('app.js');
 
     mix.scripts([
         'public/js/app.js',
@@ -27,7 +27,7 @@ elixir(function (mix) {
     ], null, './');
 
     mix.scripts([
-        'node_modules/raphael/raphael-min.js',
+        'node_modules/raphael/raphael.min.js',
         'node_modules/morris.js/morris.min.js',
         'node_modules/chart.js/Chart.min.js',
         'resources/assets/js/charts.js'

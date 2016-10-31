@@ -2,7 +2,7 @@
 
 namespace PiFinder\Providers;
 
-use Collective\Bus\Dispatcher;
+use AltThree\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
 class BusServiceProvider extends ServiceProvider

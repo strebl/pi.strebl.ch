@@ -42,7 +42,7 @@ class ApiController extends Controller
     public function respondCreated($data, $id)
     {
         $headers = [
-            'Location' => route('api.v1.devices.show', $id),
+            'Location' => route('devices.show', $id),
         ];
 
         return $this->setStatusCode(201)->respond(compact('data'), $headers);
@@ -56,7 +56,7 @@ class ApiController extends Controller
     public function respondPoked($data, $id)
     {
         $headers = [
-            'Location' => route('api.v1.devices.show', $id),
+            'Location' => route('devices.show', $id),
         ];
 
         return $this->setStatusCode(200)->respond(compact('data'), $headers);
