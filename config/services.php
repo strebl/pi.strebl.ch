@@ -35,7 +35,7 @@ return [
     ],
 
     'pusher' => [
-        'key' => env('PUSHER_KEY'),
+        'key'     => env('PUSHER_KEY'),
         'channel' => env('PUSHER_CHANNEL', 'pi-finder'),
     ],
 
