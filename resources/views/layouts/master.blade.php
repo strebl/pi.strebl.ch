@@ -31,11 +31,11 @@
     <meta name="msapplication-wide310x150logo" content="/img/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/img/favicon/mstile-310x310.png" />
     @if(isset($group))
-        <meta name="pusher-channel" content="{{ env('PUSHER_CHANNEL', 'pi-finder') }}-{{ $group }}" />
+        <meta name="pusher-channel" content="{{ config('services.pusher.channel') }}-{{ $group }}" />
     @else
-        <meta name="pusher-channel" content="{{ env('PUSHER_CHANNEL', 'pi-finder') }}" />
+        <meta name="pusher-channel" content="{{ config('services.pusher.channel') }}" />
     @endif
-    <meta name="pusher-key" content="{{ env('PUSHER_KEY') }}">
+    <meta name="pusher-key" content="{{ config('services.pusher.key') }}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

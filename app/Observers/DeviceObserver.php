@@ -31,7 +31,7 @@ class DeviceObserver
 
     public function deleted($device)
     {
-        $this->pusher->trigger(env('PUSHER_CHANNEL', 'pi-finder'), 'DeviceWasDeleted', [
+        $this->pusher->trigger(config('services.pusher.channel'), 'DeviceWasDeleted', [
             'device' => $this->transformer->transform($device),
         ]);
     }

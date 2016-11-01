@@ -34,4 +34,9 @@ return [
         'secret' => '',
     ],
 
+    'pusher' => [
+        'key' => env('PUSHER_KEY'),
+        'channel' => env('PUSHER_CHANNEL', 'pi-finder'),
+    ],
+
 ];
