@@ -48,14 +48,14 @@
 
         </div> <!-- row -->
 
-        <template id="device-template">
+        <script type="x/templates" id="device-template">
             <tr class="device-row" id="device-@{{ device.id }}">
                 <td class="device-name">@{{ device.name }}</td>
                 <td class="device-ip">@{{ device.ip }}</td>
                 <td data-timestamp="@{{ device.device_added }}" class="device-created_at">@{{ creationTime }}</td>
                 <td data-timestamp="@{{ device.last_contact }}" class="device-updated_at">@{{ relativeTime }}</td>
             </tr>
-        </template>
+        </script>
 
     </div> <!-- container -->
 
