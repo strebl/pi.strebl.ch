@@ -65,9 +65,9 @@ var app = new Vue({
         }
     },
     ready() {
-        this.$http.get('/api/v1/devices/' + this.group, function (data, status, request) {
-            this.$set('devices', data.data);
-            this.$set('serverTimeOffset', moment(data.server_time).diff(new Date()));
+        this.$http.get('/api/v1/devices/' + this.group).then(function (response) {
+            this.$set('devices', response.data.data);
+            this.$set('serverTimeOffset', moment(response.data.server_time).diff(new Date()));
         });
 
         this.startTimer();

@@ -65,8 +65,8 @@
 
 @yield('content')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.17/vue-resource.js"></script>
+<script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
 <script src={{ elixir("js/all.js") }}></script>
 @yield('javascript')
 
