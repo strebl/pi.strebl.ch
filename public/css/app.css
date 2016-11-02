@@ -17161,7 +17161,11 @@ pre[class*="language-"] {
   margin: 0.1em 0; }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: #e9edf6; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600; }
 
 .getting-started {
   font-size: 16px; }
@@ -17202,7 +17206,7 @@ body {
     .app-header__icon a:hover {
       color: white; }
   .app-header__title {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 84px;
     margin: 0;
     position: relative;
@@ -17211,7 +17215,7 @@ body {
     .app-header__title a:hover {
       color: white; }
   .app-header__subtitle {
-    font-weight: 300;
+    font-weight: 100;
     font-size: 18px;
     margin: 30px auto;
     position: relative;
@@ -17255,19 +17259,21 @@ body {
     padding: 12px 25px;
     color: white;
     font-size: 1em;
-    font-weight: 700; }
+    font-weight: 500; }
   .table > tbody > tr > td {
     background-color: #ffffff;
     border-bottom: 0px solid #e6edf5;
     border-top: 2px solid #e6edf5;
-    padding: 21px 25px; }
+    padding: 21px 25px;
+    font-weight: 300; }
   .table > tbody > tr > th {
     background-color: #c9d5e5;
     color: white;
     text-transform: uppercase;
     border-top: 0px;
     border-bottom: 0px;
-    font-size: 0.8em; }
+    font-size: 0.8em;
+    font-weight: 400; }
 
 .statistics {
   margin-top: 20px;

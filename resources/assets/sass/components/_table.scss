@@ -16,7 +16,7 @@
     padding: 12px 25px;
     color: white;
     font-size: 1em;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   >tbody>tr>td {
@@ -24,6 +24,7 @@
     border-bottom: 0px solid #e6edf5;
     border-top: 2px solid #e6edf5;
     padding: 21px 25px;
+    font-weight: 300;
   }
 
   >tbody>tr>th {
@@ -33,5 +34,6 @@
     border-top: 0px;
     border-bottom: 0px;
     font-size: 0.8em;
+    font-weight: 400;
   }
 }
