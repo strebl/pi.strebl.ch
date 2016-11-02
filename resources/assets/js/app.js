@@ -9,8 +9,8 @@ require('prismjs/components/prism-clike');
 require('prismjs/components/prism-javascript');
 require('prismjs/components/prism-bash');
 
-moment.locale('en', {
-    relativeTime : {
+moment.updateLocale('en', {
+    relativeTime: {
         future: "in %s",
         past:   "%s ago",
         s:  "%d seconds",
