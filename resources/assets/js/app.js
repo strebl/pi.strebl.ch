@@ -27,8 +27,12 @@ moment.locale('en', {
     }
 });
 
-var pusher = new Pusher($('meta[name=pusher-key]').attr('content'));
-var channel = pusher.subscribe($('meta[name=pusher-channel]').attr('content'));
+var pusher = new Pusher(
+    document.querySelector('meta[name=pusher-key]').getAttribute('content')
+);
+var channel = pusher.subscribe(
+    document.querySelector('meta[name=pusher-channel]').getAttribute('content')
+);
 
 channel.bind('ServerWasPoked', function(data) {
     app.updateDevice(data.device);
