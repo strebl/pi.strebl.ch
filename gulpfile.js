@@ -17,11 +17,6 @@ elixir(function (mix) {
     mix.webpack('app.js');
 
     mix.scripts([
-        'public/js/app.js',
-        'resources/assets/js/vendor/flat-ui-pro.min.js'
-    ], null, './');
-
-    mix.scripts([
         'node_modules/raphael/raphael.min.js',
         'node_modules/morris.js/morris.min.js',
         'node_modules/chart.js/Chart.min.js',
