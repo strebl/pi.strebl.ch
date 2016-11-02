@@ -1,7 +1,6 @@
 global.$      = require('jquery');
 global.jQuery = require('jquery');
 var moment    = require('moment');
-require('sweetalert');
 require('pusher-js');
 require('prismjs');
 require('prismjs/components/prism-markup');
