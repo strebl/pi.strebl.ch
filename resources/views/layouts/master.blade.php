@@ -37,12 +37,6 @@
     @endif
     <meta name="pusher-key" content="{{ config('services.pusher.key') }}">
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="/js/ie.min.js"></script>
-    <![endif]-->
 </head>
 <body id="csstyle">
 {{-- @include('layouts.partials.navbar') --}}

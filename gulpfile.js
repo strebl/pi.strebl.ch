@@ -14,11 +14,6 @@ var elixir = require('laravel-elixir');
 elixir(function (mix) {
     mix.sass('app.scss');
 
-    mix.scripts([
-        'html5shiv/dist/html5shiv.min.js',
-        'respond.js/dest/respond.min.js'
-    ], 'public/js/ie.min.js', 'node_modules');
-
     mix.webpack('app.js');
 
     mix.scripts([
