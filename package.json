@@ -5,9 +5,7 @@
     "bootstrap-sass": "^3.3.7",
     "chart.js": "^1.1.1",
     "csstyle": "^1.5.0",
-    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
-    "html5shiv": "^3.7.3",
     "jquery": "^2.2.4",
     "laravel-elixir": "^6.0.0-11",
     "laravel-elixir-webpack-official": "^1.0.9",
@@ -15,7 +13,6 @@
     "morris.js": "git+https://github.com/morrisjs/morris.js.git",
     "prismjs": "^1.5.1",
     "pusher-js": "^3.2.1",
-    "raphael": "^2.2.6",
-    "respond.js": "^1.4.2"
+    "raphael": "^2.2.6"
   }
 }
