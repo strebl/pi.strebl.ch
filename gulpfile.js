@@ -12,7 +12,18 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function (mix) {
-    mix.sass('app.scss');
+    /*
+     * prod
+     */
+    // mix.sass('app.scss');
+
+    /*
+     * prod
+     *
+     * Generate uncss.css:
+     * NODE_TLS_REJECT_UNAUTHORIZED=0 uncss http://pi.strebl.ch.dev/ http://pi.strebl.ch.dev/@test http://pi.strebl.ch.dev/getting-started --ignoreSheets /bootstrapcdn/ > resources/assets/css/uncss.css
+     */
+    mix.styles('uncss.css', 'public/css/app.css');
 
     mix.webpack('app.js');
 
