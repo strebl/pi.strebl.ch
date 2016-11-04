@@ -21,7 +21,7 @@ elixir(function (mix) {
      * prod
      *
      * Generate uncss.css:
-     * NODE_TLS_REJECT_UNAUTHORIZED=0 uncss http://pi.strebl.ch.dev/ http://pi.strebl.ch.dev/@test http://pi.strebl.ch.dev/getting-started --ignoreSheets /bootstrapcdn/ > resources/assets/css/uncss.css
+     * NODE_TLS_REJECT_UNAUTHORIZED=0 uncss http://pi.strebl.ch.dev/ http://pi.strebl.ch.dev/@test http://pi.strebl.ch.dev/getting-started http://pi.strebl.ch.dev/stats --ignoreSheets /bootstrapcdn/ > resources/assets/css/uncss.css
      */
     mix.styles('uncss.css', 'public/css/app.css');
 
