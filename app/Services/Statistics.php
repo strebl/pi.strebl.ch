@@ -52,7 +52,7 @@ class Statistics
     {
         $regex = '^172\.(1[6-9]|2[0-9]|3[01])\.';
 
-        if((new Poke)->getConnection()->getConfig('driver') == 'sqlite') {
+        if ((new Poke())->getConnection()->getConfig('driver') == 'sqlite') {
             $regex = "/$regex/";
             $this->createSqliteRegexpFunction();
         }
