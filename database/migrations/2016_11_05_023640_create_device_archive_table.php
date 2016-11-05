@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateDeviceArchiveTable extends Migration
 {
@@ -23,7 +23,7 @@ class CreateDeviceArchiveTable extends Migration
 
         $devices->each(function ($device) {
             \PiFinder\DeviceArchive::create([
-                'mac_hash' => md5($device->mac)
+                'mac_hash' => md5($device->mac),
             ]);
         });
     }
