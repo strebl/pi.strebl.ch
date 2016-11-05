@@ -50,39 +50,14 @@ class Statistics
      */
     public function networkDistribution()
     {
-        $regex = '^172\.(1[6-9]|2[0-9]|3[01])\.';
-
-        if ((new Poke())->getConnection()->getConfig('driver') == 'sqlite') {
-            $regex = "/$regex/";
-            $this->createSqliteRegexpFunction();
-        }
-
         $data = Poke::select(
-            DB::raw("
-                CASE
-                    WHEN ip LIKE '192.168.%'
-                        THEN '192.168.0.0/16'
-                    WHEN (ip REGEXP '$regex')
-                        THEN '172.16.0.0/12'
-                    WHEN ip LIKE '10.%'
-                        THEN '10.0.0.0/8'
-                    ELSE 'Internet'
-                END
-		AS label, count(*) as value")
-        )
+            DB::raw("ip as label, count(ip) as value")
+            )
             ->groupBy('label')
             ->orderBy('label')
             ->get();
 
         return $this->addColors($data);
-    }
-
-    /**
-     * Creates the Regexp function for the SQLITE database.
-     */
-    protected function createSqliteRegexpFunction()
-    {
-        DB::connection()->getPdo()->sqliteCreateFunction('REGEXP', 'preg_match', 2);
     }
 
     private function addColors($data)

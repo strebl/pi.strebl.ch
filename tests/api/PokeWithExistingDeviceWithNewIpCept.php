@@ -41,7 +41,7 @@ $I->seeRecord('devices', [
     'group'  => null,
 ]);
 $I->seeRecord('pokes', [
-    'ip'   => '192.168.1.100',
+    'ip'   => '192.168.0.0/16',
     'mac'  => '00:19:20:A1:B4:FC',
 ]);
 $device = $I->grabRecord('devices', ['mac' => '00:19:20:A1:B4:FC']);

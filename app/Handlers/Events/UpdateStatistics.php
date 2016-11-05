@@ -4,6 +4,8 @@ namespace PiFinder\Handlers\Events;
 
 use PiFinder\Events\ServerWasPoked;
 use PiFinder\Poke;
+use PiFinder\Utilities;
+use PiFinder\Utilities\ExtractNetwork;
 
 class UpdateStatistics
 {
@@ -16,6 +18,9 @@ class UpdateStatistics
      */
     public function handle(ServerWasPoked $event)
     {
-        Poke::create($event->getDevice()->toArray());
+        $device = $event->getDevice()->toArray();
+        $device['ip'] = ExtractNetwork::fromIp($device['ip']);
+
+        Poke::create($device);
     }
 }
