@@ -2,7 +2,9 @@
 
 namespace PiFinder\Services;
 
+use Carbon\Carbon;
 use DB;
+use PiFinder\DeviceArchive;
 use PiFinder\Poke;
 
 class Statistics
@@ -16,7 +18,7 @@ class Statistics
     {
         $base = 189771;
 
-        return Poke::count() + $base;
+        return DB::table('network_distribution')->sum('pokes') + $base;
     }
 
     /**
@@ -26,7 +28,7 @@ class Statistics
      */
     public function totalDevices()
     {
-        return Poke::distinct()->count('mac');
+        return DeviceArchive::count();
     }
 
     /**
@@ -36,11 +38,7 @@ class Statistics
      */
     public function allPokes()
     {
-        return Poke::select(
-            DB::raw('count(*) as pokes, date(created_at) as date')
-        )
-            ->groupBy('date')
-            ->get();
+        return Poke::all();
     }
 
     /**
@@ -50,11 +48,8 @@ class Statistics
      */
     public function networkDistribution()
     {
-        $data = Poke::select(
-            DB::raw("ip as label, count(ip) as value")
-            )
-            ->groupBy('label')
-            ->orderBy('label')
+        $data = DB::table('network_distribution')
+            ->select('network as label', 'pokes as value')
             ->get();
 
         return $this->addColors($data);
@@ -64,11 +59,10 @@ class Statistics
     {
         $colors = ['rgb(23,103,153)', 'rgb(47,135,176)', 'rgb(66,164,187)', 'rgb(91,192,196)'];
         $highlight_colors = ['#8BB3CC', '#97C3D7', '#ADDFE1', '#BBEAE3'];
-        foreach ($data as $i => $network) {
-            $network['color'] = $colors[$i];
-            $network['highlight'] = $highlight_colors[$i];
-        }
 
-        return $data;
+        return $data->each(function ($network, $i) use ($colors, $highlight_colors) {
+            $network->color = $colors[$i];
+            $network->highlight = $highlight_colors[$i];
+        });
     }
 }

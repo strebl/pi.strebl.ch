@@ -2,9 +2,11 @@
 
 namespace PiFinder\Handlers\Events;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use PiFinder\DeviceArchive;
 use PiFinder\Events\ServerWasPoked;
 use PiFinder\Poke;
-use PiFinder\Utilities;
 use PiFinder\Utilities\ExtractNetwork;
 
 class UpdateStatistics
@@ -19,8 +21,19 @@ class UpdateStatistics
     public function handle(ServerWasPoked $event)
     {
         $device = $event->getDevice()->toArray();
-        $device['ip'] = ExtractNetwork::fromIp($device['ip']);
 
-        Poke::create($device);
+        // device count
+        DeviceArchive::updateOrCreate(
+            ['mac_hash' => md5($device['mac'])],
+            ['updated_at' => Carbon::now()]
+        );
+
+        // network distribution
+        $network = ExtractNetwork::fromIp($device['ip']);
+        DB::table('network_distribution')->where('network', $network)->increment('pokes');
+
+        // pokes
+        $date = Carbon::now()->toDateString();
+        Poke::firstOrCreate(['date' => $date])->increment('pokes');
     }
 }

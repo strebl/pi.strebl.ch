@@ -1,7 +1,14 @@
 <?php
 
+use Carbon\Carbon;
+
 $I = new ApiTester($scenario);
 $I->wantTo('poke with optional configuration parameters');
+
+$now = Carbon::now()->subYears(20);
+Carbon::setTestNow($now);
+
+$currentNetworkDistribution = \DB::table('network_distribution')->where('network', '192.168.0.0/16')->first()->pokes;
 
 $I->sendPOST('devices/poke', [
     'ip'     => '192.168.1.123',
@@ -32,6 +39,14 @@ $I->seeRecord('devices', [
     'group'  => 'strebl',
 ]);
 $I->seeRecord('pokes', [
-    'ip'   => '192.168.0.0/16',
-    'mac'  => '00:19:20:A1:B4:FC',
+    'date'   => $now->toDateString(),
+    'pokes'  => 1,
+]);
+$I->seeRecord('network_distribution', [
+    'network' => '192.168.0.0/16',
+    'pokes'   => $currentNetworkDistribution + 1,
+]);
+$I->seeRecord('device_archive', [
+    'mac_hash'   => md5('00:19:20:A1:B4:FC'),
+    'updated_at' => $now,
 ]);

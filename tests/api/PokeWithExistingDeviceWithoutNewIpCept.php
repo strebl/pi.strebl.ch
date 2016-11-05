@@ -1,7 +1,12 @@
 <?php
 
+use Carbon\Carbon;
+
 $I = new ApiTester($scenario);
 $I->wantTo('poke the server with an existing device and a unchanged IP');
+
+$now = Carbon::now()->subYears(20);
+Carbon::setTestNow($now);
 
 $initial_created_at = \Carbon\Carbon::now()->subHour();
 $initial_created_at->second($initial_created_at->second);
@@ -41,8 +46,8 @@ $I->seeRecord('devices', [
     'group'  => null,
 ]);
 $I->seeRecord('pokes', [
-    'ip'   => '192.168.0.0/16',
-    'mac'  => '00:19:20:A1:B4:FC',
+    'date'   => $now->toDateString(),
+    'pokes'  => 1,
 ]);
 $device = $I->grabRecord('devices', ['mac' => '00:19:20:A1:B4:FC']);
 $created_at_after_poke = $I->carbonize($device['created_at']);

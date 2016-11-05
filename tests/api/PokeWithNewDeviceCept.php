@@ -1,7 +1,12 @@
 <?php
 
+use Carbon\Carbon;
+
 $I = new ApiTester($scenario);
 $I->wantTo('poke the server with a new device');
+
+$now = Carbon::now()->subYears(20);
+Carbon::setTestNow($now);
 
 $I->sendPOST('devices/poke', [
     'ip'   => '192.168.1.123',
@@ -29,6 +34,6 @@ $I->seeRecord('devices', [
     'group'  => null,
 ]);
 $I->seeRecord('pokes', [
-    'ip'   => '192.168.0.0/16',
-    'mac'  => '00:19:20:A1:B4:FC',
+    'date'   => $now->toDateString(),
+    'pokes'  => 1,
 ]);
