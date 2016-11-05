@@ -1,9 +1,9 @@
 <?php
 
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
 class CreateNetworkDistributionTable extends Migration
 {
@@ -26,7 +26,7 @@ class CreateNetworkDistributionTable extends Migration
             ['network' => 'Internet'],
         ]);
 
-        $networks = DB::table('pokes')->select(DB::raw("ip as network, count(ip) as pokes"))
+        $networks = DB::table('pokes')->select(DB::raw('ip as network, count(ip) as pokes'))
             ->groupBy('network')
             ->orderBy('network')
             ->get();

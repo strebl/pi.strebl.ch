@@ -2,7 +2,6 @@
 
 namespace PiFinder\Services;
 
-use Carbon\Carbon;
 use DB;
 use PiFinder\DeviceArchive;
 use PiFinder\Poke;
