@@ -1,5 +1,3 @@
-global.$      = require('jquery');
-global.jQuery = require('jquery');
 var moment    = require('moment');
 require('pusher-js');
 require('prismjs');
