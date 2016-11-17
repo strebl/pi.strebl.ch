@@ -73,7 +73,7 @@
 
 <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
-<script src={{ elixir("js/all.js") }}></script>
+<script src={{ elixir("js/app.js") }}></script>
 @yield('javascript')
 
 </body>
