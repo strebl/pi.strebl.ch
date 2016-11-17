@@ -1,10 +1,10 @@
-var moment    = require('moment');
-require('pusher-js');
-require('prismjs');
-require('prismjs/components/prism-markup');
-require('prismjs/components/prism-clike');
-require('prismjs/components/prism-javascript');
-require('prismjs/components/prism-bash');
+import moment from 'moment';
+import 'pusher-js';
+import 'prismjs';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-bash';
 
 moment.updateLocale('en', {
     relativeTime: {
