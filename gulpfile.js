@@ -34,5 +34,5 @@ elixir(function (mix) {
         'resources/assets/js/charts.js'
     ], 'public/js/charts.js', './');
 
-    mix.version(['css/app.css', 'js/all.js', 'js/charts.js']);
+    mix.version(['css/app.css', 'js/app.js', 'js/charts.js']);
 });
