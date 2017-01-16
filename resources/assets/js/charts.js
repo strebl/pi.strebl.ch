@@ -1,3 +1,8 @@
+import Raphael from'raphael'
+window.Raphael = Raphael
+import 'morris.js'
+import Chart from 'chart.js'
+
 new Morris.Bar({
     // ID of the element in which to draw the chart.
     element: 'pokes_graph',

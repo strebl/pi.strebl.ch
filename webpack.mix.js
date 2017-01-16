@@ -1,4 +1,5 @@
 let mix = require('laravel-mix').mix;
+let webpack = require('webpack');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ let mix = require('laravel-mix').mix;
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-   .combine([
-       'node_modules/raphael/raphael.min.js',
-       'node_modules/morris.js/morris.min.js',
-       'node_modules/chart.js/Chart.min.js',
-       'resources/assets/js/charts.js'
-    ], 'public/js/charts.js')
-   .version();
+   .js('resources/assets/js/charts.js', 'public/js/charts.js')
+   .version()
+   .webpackConfig({
+       plugins: [
+           new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+       ]
+   });
