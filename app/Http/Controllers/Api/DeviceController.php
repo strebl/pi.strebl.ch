@@ -66,7 +66,7 @@ class DeviceController extends ApiController
     {
         $device = Device::find($id);
 
-        if (!$device) {
+        if (! $device) {
             return $this->respondNotFound('Did not find the device you are looking for!');
         }
 
@@ -87,7 +87,7 @@ class DeviceController extends ApiController
     {
         $device = Device::find($id);
 
-        if (!$device) {
+        if (! $device) {
             return $this->respondNotFound('Did not find the device you are looking for!');
         }
 
@@ -111,7 +111,7 @@ class DeviceController extends ApiController
     {
         $device = Device::find($id);
 
-        if (!$device) {
+        if (! $device) {
             return $this->respondNotFound('Did not find the device you are looking for!');
         }
 
