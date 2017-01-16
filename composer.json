@@ -28,7 +28,8 @@
 		],
 		"psr-4": {
 			"PiFinder\\": "app/"
-		}
+		},
+		"files": ["app/Utilities/mix.php"]
 	},
 	"autoload-dev": {
 		"classmap": [

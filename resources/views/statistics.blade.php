@@ -65,5 +65,5 @@
 
 @section('javascript')
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src={{ elixir("js/charts.js") }}></script>
+    <script src={{ mix("js/charts.js") }}></script>
 @append

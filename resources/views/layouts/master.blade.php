@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading App css -->
-    <link href="{{ elixir("css/app.css") }}" rel="stylesheet">
+    <link href="{{ mix("css/app.css") }}" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!--<link rel="shortcut icon" href="/img/favicon/favicon.ico">-->
@@ -73,7 +73,7 @@
 
 <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
-<script src={{ elixir("js/app.js") }}></script>
+<script src={{ mix("js/app.js") }}></script>
 @yield('javascript')
 
 </body>
