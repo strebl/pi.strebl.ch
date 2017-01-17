@@ -4,10 +4,13 @@
     "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "uncss": "NODE_TLS_REJECT_UNAUTHORIZED=0 uncss http://pi.strebl.ch.dev/ http://pi.strebl.ch.dev/@test http://pi.strebl.ch.dev/getting-started http://pi.strebl.ch.dev/stats --ignoreSheets /bootstrapcdn/ > resources/assets/sass/uncss/app.scss",
+    "production": "npm run webpack && npm run uncss && npm run build"
   },
   "devDependencies": {
-    "cross-env": "^3.1.4"
+    "cross-env": "^3.1.4",
+    "uncss": "^0.14.1"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",

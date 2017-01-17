@@ -12,6 +12,29 @@ Read the [Introduction](https://pi-finder.xyz/getting-started#Introduction) for 
 
 You can configure the Pi Finder to talk to your own Poke Server. Just set up this Repo on your own server and modify the Pi Finder configuration on your device.
 
+# Development
+Install the dependencies
+```bash
+yarn # or npm install
+composer install
+```
+
+To build for dev run
+```bash
+npm run webpack
+```
+
+If you want webpack to build on code changes, run
+```bash
+npm run dev
+```
+
+To build for production run
+```bash
+npm run production
+```
+This will first build for development, optimize css with `uncss` and then minify and version everything.
+
 ## Contribution
 Thank you for considering to contribute. Just open a issue or create a pull request if you are willing to contribute.
 
