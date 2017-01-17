@@ -4,8 +4,8 @@ namespace PiFinder\Console\Commands;
 
 use Illuminate\Console\Command;
 use PiFinder\Services\Registrar;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
 
 class UserCreate extends Command
 {
@@ -53,11 +53,11 @@ class UserCreate extends Command
         $password = $this->option('password');
         $password_confirmation = $this->option('password_confirmation');
 
-        if (!$password) {
+        if (! $password) {
             $password = $this->secret('What password should the user have?');
         }
 
-        if (!$password_confirmation) {
+        if (! $password_confirmation) {
             $password_confirmation = $this->secret('Please confirm the password.');
         }
 

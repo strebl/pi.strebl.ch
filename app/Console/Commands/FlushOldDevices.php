@@ -3,8 +3,8 @@
 namespace PiFinder\Console\Commands;
 
 use Carbon\Carbon;
-use Illuminate\Console\Command;
 use PiFinder\Device;
+use Illuminate\Console\Command;
 
 class FlushOldDevices extends Command
 {

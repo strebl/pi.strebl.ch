@@ -2,8 +2,8 @@
 
 namespace PiFinder\Observers;
 
-use PiFinder\Transformers\DeviceTransformer;
 use Vinkla\Pusher\PusherManager;
+use PiFinder\Transformers\DeviceTransformer;
 
 class DeviceObserver
 {

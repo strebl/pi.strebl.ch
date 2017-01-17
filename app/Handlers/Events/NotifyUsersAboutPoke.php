@@ -2,9 +2,9 @@
 
 namespace PiFinder\Handlers\Events;
 
+use Vinkla\Pusher\PusherManager;
 use PiFinder\Events\ServerWasPoked;
 use PiFinder\Transformers\DeviceTransformer;
-use Vinkla\Pusher\PusherManager;
 
 class NotifyUsersAboutPoke
 {

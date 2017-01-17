@@ -2,8 +2,8 @@
 
 namespace PiFinder\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use PiFinder\Services\Registrar;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

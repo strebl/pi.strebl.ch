@@ -2,8 +2,8 @@
 
 namespace PiFinder\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use PiFinder\Device;
+use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider
 {

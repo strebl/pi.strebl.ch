@@ -4,8 +4,12 @@
 // mix('js/app.js')
 function mix($path, $json = false, $shouldHotReload = false)
 {
-    if (! $json) static $json;
-    if (! $shouldHotReload) static $shouldHotReload;
+    if (! $json) {
+        static $json;
+    }
+    if (! $shouldHotReload) {
+        static $shouldHotReload;
+    }
 
     if (! $json) {
         $manifestPath = public_path('manifest.json');
@@ -13,7 +17,7 @@ function mix($path, $json = false, $shouldHotReload = false)
 
         if (! file_exists($manifestPath)) {
             throw new Exception(
-                'The Laravel Mix manifest file does not exist. ' .
+                'The Laravel Mix manifest file does not exist. '.
                 'Please run "npm run webpack" and try again.'
             );
         }
@@ -25,7 +29,7 @@ function mix($path, $json = false, $shouldHotReload = false)
 
     if (! array_key_exists($path, $json)) {
         throw new Exception(
-            'Unknown file path. Please check your requested ' .
+            'Unknown file path. Please check your requested '.
             'webpack.mix.js output path, and try again.'
         );
     }
