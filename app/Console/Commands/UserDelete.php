@@ -2,10 +2,10 @@
 
 namespace PiFinder\Console\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use PiFinder\User;
+use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserDelete extends Command
 {

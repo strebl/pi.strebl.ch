@@ -2,8 +2,8 @@
 
 namespace PiFinder\Events;
 
-use Illuminate\Queue\SerializesModels;
 use PiFinder\Device;
+use Illuminate\Queue\SerializesModels;
 
 class ServerWasPoked extends Event
 {

@@ -3,10 +3,10 @@
 namespace PiFinder\Handlers\Events;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use PiFinder\DeviceArchive;
-use PiFinder\Events\ServerWasPoked;
 use PiFinder\Poke;
+use PiFinder\DeviceArchive;
+use Illuminate\Support\Facades\DB;
+use PiFinder\Events\ServerWasPoked;
 use PiFinder\Utilities\ExtractNetwork;
 
 class UpdateStatistics

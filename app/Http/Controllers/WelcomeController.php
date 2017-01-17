@@ -2,12 +2,12 @@
 
 namespace PiFinder\Http\Controllers;
 
-use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Filesystem\Filesystem;
 use JavaScript;
 use PiFinder\Device;
-use PiFinder\Services\MarkdownParser;
 use PiFinder\Services\Statistics;
+use Illuminate\Filesystem\Filesystem;
+use PiFinder\Services\MarkdownParser;
+use Illuminate\Contracts\Cache\Repository as Cache;
 
 class WelcomeController extends Controller
 {

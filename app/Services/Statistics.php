@@ -3,8 +3,8 @@
 namespace PiFinder\Services;
 
 use DB;
-use PiFinder\DeviceArchive;
 use PiFinder\Poke;
+use PiFinder\DeviceArchive;
 
 class Statistics
 {
