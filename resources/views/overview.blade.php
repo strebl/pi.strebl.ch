@@ -24,18 +24,19 @@
                     <h2>Nope!</h2>
                     <p class="lead">No Pi poked me recently.</p>
                 </div>
-                <div class="table-container">
-                    <table class="table hidden" id="device-table">
-                        @include('partials.device-table-header')
-                    </table>
-                </div>
             </div>
         </div>
         <div class="row" v-else>
             <div class="col-md-10 col-md-offset-1">
+                <h4 class="table__title">{{ $group or '' }} Devices</h4>
                 <div class="table-container">
                     <table class="table" id="device-table">
-                        @include('partials.device-table-header')
+                        <tr>
+                            <th>Name</th>
+                            <th>IP</th>
+                            <th>Added</th>
+                            <th>Last Contact</th>
+                        </tr>
                         <tr is="device"
                             v-for="device in devices | orderBy 'device_added' -1"
                             track-by="id"
