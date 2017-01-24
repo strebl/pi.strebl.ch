@@ -16,7 +16,9 @@ class BusServiceProvider extends ServiceProvider
     {
         $dispatcher->mapUsing(function ($command) {
             return Dispatcher::simpleMapping(
-                $command, 'PiFinder\Commands', 'PiFinder\Handlers\Commands'
+                $command,
+                'PiFinder\Commands',
+                'PiFinder\Handlers\Commands'
             );
         });
     }

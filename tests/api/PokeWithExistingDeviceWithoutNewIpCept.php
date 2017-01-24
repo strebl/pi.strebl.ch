@@ -55,9 +55,15 @@ $created_at_after_poke->second($created_at_after_poke->second);
 $updated_at_after_poke = $I->carbonize($device['updated_at']);
 $updated_at_after_poke->second($updated_at_after_poke->second);
 
-$I->assertTrue($updated_at_after_poke->gt($initial_updated_at),
-    'The updated_at timestamp after the poke is greater than the initial updated_at timestamp');
-$I->assertTrue($updated_at_after_poke->gt($initial_created_at),
-    'The updated_at timestamp after the poke is greater than the initial created_at timestamp');
-$I->assertTrue($created_at_after_poke->eq($initial_created_at),
-    'The created_at timestamp after the poke is equal to the initial created_at timestamp');
+$I->assertTrue(
+    $updated_at_after_poke->gt($initial_updated_at),
+    'The updated_at timestamp after the poke is greater than the initial updated_at timestamp'
+);
+$I->assertTrue(
+    $updated_at_after_poke->gt($initial_created_at),
+    'The updated_at timestamp after the poke is greater than the initial created_at timestamp'
+);
+$I->assertTrue(
+    $created_at_after_poke->eq($initial_created_at),
+    'The created_at timestamp after the poke is equal to the initial created_at timestamp'
+);

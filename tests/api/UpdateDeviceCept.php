@@ -51,12 +51,18 @@ $I->cantSeeRecord('devices', [
 ]);
 $updated_created_at_timestamp = $I->carbonize($updatedDevice['created_at']);
 $updated_updated_at_timestamp = $I->carbonize($updatedDevice['updated_at']);
-$I->assertTrue($updated_created_at_timestamp->eq($created_at),
-    'Updated created_at timestamp is equal to the initial created_at timestamp');
-$I->assertTrue($updated_updated_at_timestamp->gt($updated_at),
-    'Updated updated_at timestamp is greater than the initial updated_at timestamp');
-$I->assertTrue($updated_updated_at_timestamp->gt($created_at),
-    'Updated updated_at timestamp is greater than the initial created_at timestamp');
+$I->assertTrue(
+    $updated_created_at_timestamp->eq($created_at),
+    'Updated created_at timestamp is equal to the initial created_at timestamp'
+);
+$I->assertTrue(
+    $updated_updated_at_timestamp->gt($updated_at),
+    'Updated updated_at timestamp is greater than the initial updated_at timestamp'
+);
+$I->assertTrue(
+    $updated_updated_at_timestamp->gt($created_at),
+    'Updated updated_at timestamp is greater than the initial created_at timestamp'
+);
 
 $I->sendPATCH('devices/100', [
     'ip'   => '192.168.1.102',
