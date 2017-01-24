@@ -17,7 +17,7 @@
     "chart.js": "^1.1.1",
     "csstyle": "^1.5.0",
     "jquery": "^2.2.4",
-    "laravel-mix": "github:JeffreyWay/laravel-mix#master",
+    "laravel-mix": "^0.5.3",
     "moment": "^2.15.2",
     "morris.js": "git+https://github.com/morrisjs/morris.js.git",
     "prismjs": "^1.5.1",
