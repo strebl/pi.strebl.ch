@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => 'PiFinder\User',
+        'model'  => PiFinder\User::class,
         'secret' => '',
     ],
 

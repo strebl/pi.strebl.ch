@@ -13,9 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'PiFinder\Console\Commands\FlushOldDevices',
-        'PiFinder\Console\Commands\UserCreate',
-        'PiFinder\Console\Commands\UserDelete',
+        \PiFinder\Console\Commands\FlushOldDevices::class,
+        \PiFinder\Console\Commands\UserCreate::class,
+        \PiFinder\Console\Commands\UserDelete::class,
     ];
 
     /**

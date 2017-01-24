@@ -14,7 +14,7 @@ class ObserverServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Device::observe(app('PiFinder\Observers\DeviceObserver'));
+        Device::observe(app(\PiFinder\Observers\DeviceObserver::class));
     }
 
     /**
