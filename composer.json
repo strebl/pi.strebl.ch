@@ -29,14 +29,13 @@
             "database"
         ],
         "psr-4": {
-            "PiFinder\\": "app/",
-            "Tests\\": "tests/"
+            "PiFinder\\": "app/"
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "scripts": {
         "post-root-package-install": [
