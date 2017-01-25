@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Pi Finder</title>
+    <meta name="description" content="Did you ever search your Raspberry Pi or another device without monitor in your network? Anoying hmm? Pi Finder is here to solve that problem for you. Try it now!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading App css -->
