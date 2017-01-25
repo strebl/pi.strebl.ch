@@ -41,7 +41,7 @@ class NotifyUsersAboutPoke
      */
     public function handle(ServerWasPoked $event)
     {
-        $channel = config('services.pusher.channel');
+        $channel = config('broadcasting.connections.pusher.channel');
         $device = $event->getDevice();
 
         if ($device->isPublic()) {
