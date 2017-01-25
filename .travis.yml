@@ -15,20 +15,18 @@ env:
 sudo: false
 
 install:
-  - travis_retry composer install --no-interaction --prefer-source --dev
+  - travis_retry composer install --no-interaction --prefer-source
   - php artisan env
   - php artisan migrate
 
 script:
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then vendor/bin/phpunit; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.1" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "7.1" ]; then vendor/bin/codecept run; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.1" ]; then vendor/bin/codecept run --coverage --coverage-xml; fi;'
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - vendor/bin/codecept run --coverage --coverage-xml
 
 after_script:
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.0" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.0" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "7.0" ]; then php ocular.phar code-coverage:upload --format=php-clover tests/_output/coverage.xml; fi;'
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+  - php ocular.phar code-coverage:upload --format=php-clover tests/_output/coverage.xml
 
 after_failure:
  - cat storage/logs/*.log
