@@ -8,6 +8,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
+        "php": "^7.0",
         "laravel/framework": "5.4.*",
         "alt-three/bus": "^2.0",
         "erusev/parsedown-extra": "0.7.*",
