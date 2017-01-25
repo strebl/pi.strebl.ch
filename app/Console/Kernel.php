@@ -13,9 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'PiFinder\Console\Commands\FlushOldDevices',
-        'PiFinder\Console\Commands\UserCreate',
-        'PiFinder\Console\Commands\UserDelete',
+        \PiFinder\Console\Commands\FlushOldDevices::class,
+        \PiFinder\Console\Commands\UserCreate::class,
+        \PiFinder\Console\Commands\UserDelete::class,
     ];
 
     /**
@@ -27,5 +27,15 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('pi:flush')
                  ->everyFiveMinutes();
+    }
+
+    /**
+     * Register the Closure based commands for the application.
+     *
+     * @return void
+     */
+    protected function commands()
+    {
+        require base_path('routes/console.php');
     }
 }

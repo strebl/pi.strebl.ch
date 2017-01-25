@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Pi Finder</title>
+    <meta name="description" content="Did you ever search your Raspberry Pi or another device without monitor in your network? Anoying hmm? Pi Finder is here to solve that problem for you. Try it now!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading App css -->
@@ -31,11 +32,11 @@
     <meta name="msapplication-wide310x150logo" content="/img/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/img/favicon/mstile-310x310.png" />
     @if(isset($group))
-        <meta name="pusher-channel" content="{{ config('services.pusher.channel') }}-{{ $group }}" />
+        <meta name="pusher-channel" content="{{ config('broadcasting.connections.pusher.channel') }}-{{ $group }}" />
     @else
-        <meta name="pusher-channel" content="{{ config('services.pusher.channel') }}" />
+        <meta name="pusher-channel" content="{{ config('broadcasting.connections.pusher.channel') }}" />
     @endif
-    <meta name="pusher-key" content="{{ config('services.pusher.key') }}">
+    <meta name="pusher-key" content="{{ config('broadcasting.connections.pusher.key') }}">
 
 </head>
 <body id="csstyle">

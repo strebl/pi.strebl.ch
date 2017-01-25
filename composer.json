@@ -1,56 +1,60 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
-	"license": "MIT",
-	"type": "project",
-	"require": {
-		"laravel/framework": "5.3.*",
-		"alt-three/bus": "^2.0",
-		"erusev/parsedown-extra": "0.7.*",
-		"vinkla/pusher": "~2.0",
-		"bugsnag/bugsnag-laravel": "1.*",
-		"doctrine/dbal": "^2.5",
-		"laracasts/utilities": "^2.1"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "~4.0",
-		"phpspec/phpspec": "~2.1",
-		"codeception/codeception": "^2.2",
-	  	"phpunit/php-code-coverage": "~2.0",
-		"symfony/dom-crawler": "3.1.*",
-		"symfony/css-selector": "3.1.*",
-		"friendsofphp/php-cs-fixer": "^2.0"
-	},
-	"autoload": {
-		"classmap": [
-			"database"
-		],
-		"psr-4": {
-			"PiFinder\\": "app/"
-		},
-		"files": ["app/Utilities/mix.php"]
-	},
-	"autoload-dev": {
-		"classmap": [
-			"tests/TestCase.php"
-		]
-	},
-	"scripts": {
-		"post-install-cmd": [
-			"php artisan clear-compiled",
-			"php artisan optimize"
-		],
-		"post-update-cmd": [
-			"php artisan clear-compiled",
-			"php artisan optimize"
-		],
-		"post-create-project-cmd": [
-			"php -r \"copy('.env.example', '.env');\"",
-			"php artisan key:generate"
-		]
-	},
-	"config": {
-		"preferred-install": "dist"
-	}
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^7.0",
+        "laravel/framework": "5.4.*",
+        "alt-three/bus": "^2.0",
+        "erusev/parsedown-extra": "0.7.*",
+        "vinkla/pusher": "~2.0",
+        "bugsnag/bugsnag-laravel": "1.*",
+        "doctrine/dbal": "^2.5",
+        "laracasts/utilities": "^2.1",
+        "laravel/tinker": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "phpspec/phpspec": "~2.1",
+        "codeception/codeception": "2.2.x-dev@dev",
+        "friendsofphp/php-cs-fixer": "^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "PiFinder\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
 }

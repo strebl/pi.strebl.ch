@@ -13,7 +13,7 @@ let webpack = require('webpack');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .js('resources/assets/js/charts.js', 'public/js/charts.js')
+   .js('resources/assets/js/charts.js', 'public/js')
    .version()
    .webpackConfig({
        plugins: [
