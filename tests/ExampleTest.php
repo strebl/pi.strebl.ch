@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests;
+
 class ExampleTest extends TestCase
 {
     public function setUp()
@@ -11,7 +13,7 @@ class ExampleTest extends TestCase
 
     private function prepareForTests()
     {
-        Artisan::call('migrate');
+        \Artisan::call('migrate');
     }
 
     /**
