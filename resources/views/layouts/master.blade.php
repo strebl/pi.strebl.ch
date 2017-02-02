@@ -72,8 +72,6 @@
 
 @yield('content')
 
-<script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
 <script src={{ mix("js/app.js") }}></script>
 @yield('javascript')
 
