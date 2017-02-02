@@ -14,7 +14,6 @@ let webpack = require('webpack');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/charts.js', 'public/js')
-   .version()
    .webpackConfig({
        plugins: [
            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
@@ -26,3 +25,5 @@ if(process.env.NODE_ENV === 'development') {
 } else {
    mix.sass('resources/assets/sass/uncss/app.scss', 'public/css')
 }
+
+if(mix.config.inProduction) mix.version();

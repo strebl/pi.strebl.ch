@@ -8,3 +8,4 @@ tests/_output/*
 .php_cs
 .php_cs.cache
 /storage/database.sqlite
+public/hot
