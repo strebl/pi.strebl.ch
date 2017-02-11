@@ -37,6 +37,7 @@ after_script:
 
 after_failure:
  - cat storage/logs/*.log
+ - for f in tests/Browser/screenshots/*.png(N); do curl -sST $f chunk.io; done
 
 notifications:
   webhooks:
