@@ -22,7 +22,7 @@ install:
   - mv .env.dusk.travis .env.dusk
 
 script:
-  - php artisan dusk
+  - php artisan dusk --coverage-clover=build/logs/clover.xml
   - vendor/bin/codecept run --coverage --coverage-xml
 
 after_script:

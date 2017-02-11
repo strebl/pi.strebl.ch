@@ -14,7 +14,6 @@
         "doctrine/dbal": "^2.5",
         "erusev/parsedown-extra": "0.7.*",
         "laracasts/utilities": "^2.1",
-        "laravel/dusk": "^1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "vinkla/pusher": "~2.0"
@@ -23,6 +22,7 @@
         "codeception/codeception": "2.2.x-dev@dev",
         "friendsofphp/php-cs-fixer": "^2.0",
         "fzaninotto/faker": "^1.6",
+        "laravel/dusk": "^1.0",
         "phpunit/phpunit": "~5.7"
     },
     "autoload": {
