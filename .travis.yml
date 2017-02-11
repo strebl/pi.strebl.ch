@@ -15,13 +15,16 @@ env:
 sudo: false
 
 install:
-  - phantomjs --webdriver=127.0.0.1:9515 &
-  - php artisan serve &
   - travis_retry composer install --no-interaction --prefer-source
   - php artisan env
   - php artisan migrate
   - touch .env storage/database.sqlite
   - mv .env.dusk.travis .env.dusk
+
+ before_script:
+   - phantomjs --webdriver=127.0.0.1:9515 &
+   - php artisan serve &
+   - sleep 5
 
 script:
   - php artisan dusk --coverage-clover=build/logs/clover.xml
