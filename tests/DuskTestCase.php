@@ -19,9 +19,9 @@ abstract class DuskTestCase extends BaseTestCase
      */
     public static function prepare()
     {
-        if (! env('TRAVIS')) {
+        /*if (! env('TRAVIS')) {
             static::startChromeDriver();
-        }
+        }*/
     }
 
     /**
@@ -31,14 +31,14 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function driver()
     {
-        if (env('TRAVIS')) {
+        //if (env('TRAVIS')) {
             return RemoteWebDriver::create(
                 'http://localhost:9515', DesiredCapabilities::phantomjs()
             );
-        } else {
+        /*} else {
             return RemoteWebDriver::create(
                 'http://localhost:9515', DesiredCapabilities::chrome()
             );
-        }
+        }*/
     }
 }
