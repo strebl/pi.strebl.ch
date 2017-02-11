@@ -21,10 +21,10 @@ install:
   - touch .env storage/database.sqlite
   - mv .env.dusk.travis .env.dusk
 
- before_script:
-   - phantomjs --webdriver=127.0.0.1:9515 &
-   - php artisan serve &
-   - sleep 5
+before_script:
+  - phantomjs --webdriver=127.0.0.1:9515 &
+  - php artisan serve &
+  - sleep 5
 
 script:
   - php artisan dusk --coverage-clover=build/logs/clover.xml
