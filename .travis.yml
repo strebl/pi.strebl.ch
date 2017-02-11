@@ -16,10 +16,9 @@ sudo: false
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
+  - touch .env storage/database.sqlite
   - php artisan env
   - php artisan migrate
-  - touch .env
-  - touch storage/database.sqlite
   - mv .env.dusk.travis .env.dusk
 
 before_script:
