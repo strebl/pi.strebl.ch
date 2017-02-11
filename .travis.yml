@@ -18,6 +18,7 @@ install:
   - travis_retry composer install --no-interaction --prefer-source
   - php artisan env
   - php artisan migrate
+  - touch .env
   - mv .env.dusk.travis .env.dusk
 
 script:
