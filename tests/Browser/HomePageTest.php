@@ -49,6 +49,9 @@ class HomePageTest extends DuskTestCase
                      ->waitFor('.tile')
                      ->assertDontSee('Manuel\'s Pi');
 
+            $browser1->pause(500);
+            $browser2->pause(500);
+
             $this->pokePiFinder([
                 'name' => 'Manuel\'s Pi',
                 'ip'   => '192.168.1.123',
