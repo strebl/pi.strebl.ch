@@ -37,6 +37,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+        dump(config('database'), config('database.connections.sqlite'));
         $devices = Device::onHomePage()->get();
 
         return view('overview')->with(compact('devices'));
