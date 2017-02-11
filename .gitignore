@@ -3,6 +3,7 @@
 /bower_components
 /.sass-cache
 .env
+.env.dusk
 /.idea
 tests/_output/*
 .php_cs
