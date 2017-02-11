@@ -9,20 +9,21 @@
     "type": "project",
     "require": {
         "php": "^7.0",
-        "laravel/framework": "5.4.*",
         "alt-three/bus": "^2.0",
-        "erusev/parsedown-extra": "0.7.*",
-        "vinkla/pusher": "~2.0",
         "bugsnag/bugsnag-laravel": "1.*",
         "doctrine/dbal": "^2.5",
+        "erusev/parsedown-extra": "0.7.*",
         "laracasts/utilities": "^2.1",
-        "laravel/tinker": "~1.0"
+        "laravel/dusk": "^1.0",
+        "laravel/framework": "5.4.*",
+        "laravel/tinker": "~1.0",
+        "vinkla/pusher": "~2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~5.0",
-        "phpspec/phpspec": "~2.1",
         "codeception/codeception": "2.2.x-dev@dev",
-        "friendsofphp/php-cs-fixer": "^2.0"
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "fzaninotto/faker": "^1.6",
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "classmap": [

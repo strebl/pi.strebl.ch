@@ -8,7 +8,6 @@ $I->amGoingTo('visit the home page');
 $I->amOnPage('/');
 
 $I->seeResponseCodeIs(200);
-$I->see('Nope');
 
 $I->amGoingTo('visit the getting started page');
 
