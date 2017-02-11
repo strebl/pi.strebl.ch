@@ -7,10 +7,10 @@ php:
 matrix:
   include:
     - php: 7.0
-      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest" APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:" APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""'
+      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest" APP_ENV="testing" APP_DEBUG=true APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""'
 
 env:
-  - APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:" APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""
+  - APP_ENV="testing" APP_DEBUG=true APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""
 
 sudo: false
 
