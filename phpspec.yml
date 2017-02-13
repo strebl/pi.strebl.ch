@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: PiFinder
-        psr4_prefix: PiFinder
-        src_path: app

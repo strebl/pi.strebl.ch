@@ -7,20 +7,44 @@ php:
 matrix:
   include:
     - php: 7.0
-      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest" APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:" APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""'
+      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest" APP_ENV="testing" APP_DEBUG=true APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""'
 
 env:
-  - APP_ENV="testing" APP_DEBUG=true SQLITE_DATABASE=":memory:" APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""
+  - APP_ENV="testing" APP_DEBUG=true APP_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" BUGSNAG_API_KEY=""
 
 sudo: false
 
+cache:
+  directories:
+    - travis_phantomjs
+
+before_install:
+  - export PHANTOMJS_VERSION=2.1.1
+  - phantomjs --version
+  - export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH
+  - phantomjs --version
+  - if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then echo "Installing new phantomjs version"; fi
+  - if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi
+  - if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then wget https://github.com/Medium/phantomjs/releases/download/v$PHANTOMJS_VERSION/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2; fi
+  - if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi
+  - export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH
+  - phantomjs --version
+  - which phantomjs
+
 install:
   - travis_retry composer install --no-interaction --prefer-source
+  - touch .env storage/database.sqlite
   - php artisan env
   - php artisan migrate
+  - mv .env.dusk.travis .env.dusk
+
+before_script:
+  - phantomjs --webdriver=127.0.0.1:9515 &
+  - php artisan serve &
+  - sleep 5
 
 script:
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - php artisan dusk --coverage-clover=build/logs/clover.xml
   - vendor/bin/codecept run --coverage --coverage-xml
 
 after_script:
@@ -30,6 +54,7 @@ after_script:
 
 after_failure:
  - cat storage/logs/*.log
+ - for f in tests/Browser/screenshots/*.png; do curl -sST $f chunk.io; done
 
 notifications:
   webhooks:

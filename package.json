@@ -13,17 +13,20 @@
     "uncss": "^0.14.1"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
     "chart.js": "^1.1.1",
     "csstyle": "^1.5.0",
+    "es6-promise": "^4.0.5",
     "jquery": "^2.2.4",
     "laravel-mix": "^0.5.3",
     "moment": "^2.15.2",
     "morris.js": "git+https://github.com/morrisjs/morris.js.git",
     "prismjs": "^1.5.1",
-    "pusher-js": "^3.2.1",
+    "pusher-js": "^4.0.0",
     "raphael": "^2.2.6",
-    "webpack": "2.2.0-rc.7",
+    "vue": "^2.1.10",
+    "webpack": "^2.2.1",
     "webpack-dev-server": "2.2.0-rc.0"
   }
 }

@@ -1,0 +1,9 @@
+/* uncss:ignore */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s ease-in-out
+}
+
+/* uncss:ignore */
+.fade-enter, .fade-leave-to {
+    opacity: 0
+}

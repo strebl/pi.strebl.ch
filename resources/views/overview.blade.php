@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div id="app" class="container">
+    <div class="container">
         @if(request()->getHost() == 'pi.strebl.ch')
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -18,45 +18,10 @@
                 </div>
             </div>
         @endif
-        <div class="row" v-if="noActiveDevices">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="tile --shadow js-no-devices">
-                    <h2>Nope!</h2>
-                    <p class="lead">No Pi poked me recently.</p>
-                </div>
-            </div>
+        
+        <div id="app">
+            <app></app>
         </div>
-        <div class="row" v-else>
-            <div class="col-md-10 col-md-offset-1">
-                <h4 class="table__title">{{ $group or '' }} Devices</h4>
-                <div class="table-container">
-                    <table class="table" id="device-table">
-                        <tr>
-                            <th>Name</th>
-                            <th>IP</th>
-                            <th>Added</th>
-                            <th>Last Contact</th>
-                        </tr>
-                        <tr is="device"
-                            v-for="device in devices | orderBy 'device_added' -1"
-                            track-by="id"
-                            :device="device"
-                            :current-time="currentTime"
-                        ></tr>
-                    </table>
-                </div>
-            </div>
-
-        </div> <!-- row -->
-
-        <script type="x/templates" id="device-template">
-            <tr class="device-row" id="device-@{{ device.id }}">
-                <td class="device-name">@{{ device.name }}</td>
-                <td class="device-ip">@{{ device.ip }}</td>
-                <td data-timestamp="@{{ device.device_added }}" class="device-created_at">@{{ creationTime }}</td>
-                <td data-timestamp="@{{ device.last_contact }}" class="device-updated_at">@{{ relativeTime }}</td>
-            </tr>
-        </script>
 
     </div> <!-- container -->
 
