@@ -24,5 +24,9 @@ class AppServiceProvider extends ServiceProvider
             \Illuminate\Contracts\Auth\Registrar::class,
             Registrar::class
         );
+
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(\Laravel\Dusk\DuskServiceProvider::class);
+        }
     }
 }

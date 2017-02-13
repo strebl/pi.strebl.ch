@@ -1,3 +1,7 @@
+import 'es6-promise/auto'
+import Vue from 'vue';
+import App from './App.vue';
+import bus from './bus';
 import moment from 'moment';
 import 'pusher-js';
 import 'prismjs';
@@ -25,69 +29,25 @@ moment.updateLocale('en', {
 });
 
 var pusher = new Pusher(
-    document.querySelector('meta[name=pusher-key]').getAttribute('content')
+    document.querySelector('meta[name=pusher-key]').getAttribute('content'),
+    {
+        encrypted: true
+    }
 );
 var channel = pusher.subscribe(
     document.querySelector('meta[name=pusher-channel]').getAttribute('content')
 );
 
 channel.bind('ServerWasPoked', function(data) {
-    app.updateDevice(data.device);
+    bus.$emit('ServerWasPoked', data.device)
 });
 
 channel.bind('DeviceWasDeleted', function(data) {
-    app.removeDevice(data.device.id);
+    bus.$emit('DeviceWasDeleted', data.device.id)
 });
 
-Vue.component('device', {
-    props: ['device', 'currentTime'],
-    template: '#device-template',
-    computed: {
-        creationTime() {
-            return moment(this.device.device_added).from(this.currentTime);
-        },
-        relativeTime() {
-            return moment(this.device.last_contact).from(this.currentTime);
-        }
-    },
-});
-
-var app = new Vue({
-    el: '#app',
-    data: {
-        devices: [],
-        group: window.location.pathname.split('/')[1] || '',
-        currentTime: moment(),
-        serverTimeOffset: 0,
-    },
-    computed: {
-        noActiveDevices() {
-            return this.devices.length == 0;
-        }
-    },
-    ready() {
-        this.$http.get('/api/v1/devices/' + this.group).then(function (response) {
-            this.$set('devices', response.data.data);
-            this.$set('serverTimeOffset', moment(response.data.server_time).diff(new Date()));
-        });
-
-        this.startTimer();
-    },
-    methods: {
-        startTimer() {
-            var vm = this;
-            setInterval(function() {
-                vm.currentTime = moment().subtract(vm.serverTimeOffset, 'milliseconds');
-            }, 1000);
-        },
-        removeDevice(id) {
-            this.devices = this.devices.filter(device => {
-                return device.id != id;
-            });
-        },
-        updateDevice(device) {
-            this.removeDevice(device.id);
-            this.devices.push(device);
-        }
+new Vue({
+    components: {
+        App
     }
-})
+}).$mount('#app')

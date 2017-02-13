@@ -9,5 +9,5 @@ modules:
     enabled: [Filesystem, FunctionalHelper, Laravel5, Asserts]
     config:
       Laravel5:
-        environment_file: .env.testing
+        environment_file: .env.codeception
         cleanup: false
