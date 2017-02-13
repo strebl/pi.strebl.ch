@@ -1,7 +1,7 @@
 <template>
 <transition name="fade">
     <div class="row" v-if="!loading">
-        <transition name="fade" mode="out-in">
+        <transition name="fade" mode="out-in" appear>
             <div class="col-md-10 col-md-offset-1" key="no-devices" v-if="noActiveDevices">
                 <div class="tile --shadow js-no-devices">
                     <h2>Nope!</h2>
