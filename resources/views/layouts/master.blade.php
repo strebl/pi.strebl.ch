@@ -8,7 +8,6 @@
 
     <!-- Loading App css -->
     <link href="{{ mix("css/app.css") }}" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!--<link rel="shortcut icon" href="/img/favicon/favicon.ico">-->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/favicon/apple-touch-icon-57x57.png" />
@@ -37,6 +36,8 @@
         <meta name="pusher-channel" content="{{ config('broadcasting.connections.pusher.channel') }}" />
     @endif
     <meta name="pusher-key" content="{{ config('broadcasting.connections.pusher.key') }}">
+
+    <script src="https://use.fontawesome.com/e86a7dd315.js"></script>
 
 </head>
 <body id="csstyle">
