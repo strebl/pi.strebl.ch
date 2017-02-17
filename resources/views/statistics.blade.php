@@ -65,5 +65,6 @@
 
 @section('javascript')
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://use.fontawesome.com/e86a7dd315.js"></script>
     <script src={{ mix("js/charts.js") }}></script>
 @append

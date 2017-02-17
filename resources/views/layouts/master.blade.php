@@ -37,8 +37,6 @@
     @endif
     <meta name="pusher-key" content="{{ config('broadcasting.connections.pusher.key') }}">
 
-    <script src="https://use.fontawesome.com/e86a7dd315.js"></script>
-
 </head>
 <body id="csstyle">
 {{-- @include('layouts.partials.navbar') --}}
