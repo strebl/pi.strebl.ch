@@ -34,6 +34,8 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \PiFinder\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \TomSchlick\ServerPush\Http2ServerPushMiddleware::class,
+            \PiFinder\Http\Middleware\RemoveChartsFromHttp2ServerPush::class,
         ],
 
         'api' => [

@@ -159,6 +159,7 @@ return [
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         // Collective\Bus\BusServiceProvider::class,
+        TomSchlick\ServerPush\ServiceProvider::class,
 
         /*
          * Application Service Providers...
