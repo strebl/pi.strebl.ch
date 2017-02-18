@@ -41,6 +41,6 @@ class ReplacePokeTable extends Migration
      */
     public function down()
     {
-        // 
+        //
     }
 }
