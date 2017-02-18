@@ -30,7 +30,7 @@ class ReplacePokeTable extends Migration
 
         DB::table('pokes_replacement')->insert($dates->toArray());
 
-        Schema::rename('pokes', 'pokes_legacy');
+        Schema::dropIfExists('pokes');
         Schema::rename('pokes_replacement', 'pokes');
     }
 
@@ -41,7 +41,6 @@ class ReplacePokeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pokes');
-        Schema::rename('pokes_legacy', 'pokes');
+        // 
     }
 }
