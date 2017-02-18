@@ -18,7 +18,7 @@ class RemoveChartsFromHttp2ServerPush
     {
         $this->response = $next($request);
 
-        if ($this->shouldUseServerPush($request) && !$request->is('stats')) {
+        if ($this->shouldUseServerPush($request) && ! $request->is('stats')) {
             app('server-push')->resources = collect(app('server-push')->resources)->reject(function ($resource) {
                 return str_contains($resource['path'], '/js/charts.');
             })->toArray();
@@ -34,6 +34,6 @@ class RemoveChartsFromHttp2ServerPush
      */
     protected function shouldUseServerPush(Request $request) : bool
     {
-        return !$request->ajax();
+        return ! $request->ajax();
     }
 }
