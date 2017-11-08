@@ -28,3 +28,18 @@ export default {
     }
 }
 </script>
+
+<style>
+.device-ip,
+.device-created_at,
+.device-created_at {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+.device-created_at,
+.device-created_at {
+    text-align: right;
+}
+</style>
+
